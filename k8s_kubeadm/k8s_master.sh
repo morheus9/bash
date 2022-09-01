@@ -7,7 +7,7 @@ apt update && apt upgrade
 echo "........................off Swap........................"
 
 sudo swapoff -a
-sudo sed -i '/swap/s/^/#\ /' /etc/fstab
+sed -i '/swap/s/^/#\ /' /etc/fstab
 
 echo "........................Contenerd........................"
 
