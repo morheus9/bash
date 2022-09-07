@@ -1,15 +1,15 @@
 #!/bin/bash
 
-echo "........................Update........................"
-
+sudo hostnamectl set-hostname "k8smaster.example.net"
+exec bash
 apt update && apt upgrade
 
-echo "........................off Swap........................"
+echo "........................Swap........................"
 
 sudo swapoff -a
 sed -i '/swap/s/^/#\ /' /etc/fstab
 
-echo "........................Contenerd........................"
+echo "........................Config........................"
 
 cat <<EOF | sudo tee /etc/modules-load.d/k8s.conf
 overlay
@@ -25,63 +25,54 @@ net.bridge.bridge-nf-call-ip6tables = 1
 net.ipv4.ip_forward                 = 1
 EOF
 
-wget https://github.com/containerd/containerd/releases/download/v1.6.2/containerd-1.6.2-linux-amd64.tar.gz
-tar Cxzvf /usr/local containerd-1.6.2-linux-amd64.tar.gz
-systemctl daemon-reload
-systemctl enable --now containerd
+sudo sysctl --system
 
-#curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
-#echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list
-#sudo apt update
-#sudo apt install -y containerd.io
+echo "........................Contenerd........................"
 
-echo "........................Runc........................"
-
-wget https://github.com/opencontainers/runc/releases/download/v1.1.1/runc.amd64
-install -m 755 runc.amd64 /usr/local/sbin/runc
-
-echo "........................CNI_plugins........................"
-
-sudo mkdir -p /opt/cni/bin/
-sudo wget https://github.com/containernetworking/plugins/releases/download/v1.1.1/cni-plugins-linux-amd64-v1.1.1.tgz
-sudo tar Cxzvf /opt/cni/bin cni-plugins-linux-amd64-v1.1.1.tgz
-
-echo "........................Config_for_k8s........................"
-
-mkdir -p /etc/containerd
-containerd config default | sudo tee /etc/containerd/config.toml
+sudo apt install -y curl gnupg2 software-properties-common apt-transport-https ca-certificates
+sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmour -o /etc/apt/trusted.gpg.d/docker.gpg
+sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+sudo apt update
+sudo apt install -y containerd.io
+containerd config default | sudo tee /etc/containerd/config.toml >/dev/null 2>&1
 sudo sed -i 's/SystemdCgroup \= false/SystemdCgroup \= true/g' /etc/containerd/config.toml
-systemctl restart containerd
+sudo systemctl restart containerd
+sudo systemctl enable containerd
 
-#cat <<EOF | sudo tee -a /etc/containerd/config.toml
-#[plugins."io.containerd.grpc.v1.cri".containerd.runtimes.runc]
-#[plugins."io.containerd.grpc.v1.cri".containerd.runtimes.runc.options]
-#SystemdCgroup = true
-#EOF
-#sudo sed -i 's/^disabled_plugins \=/\#disabled_plugins \=/g' /etc/containerd/config.toml
-#sudo systemctl restart containerd
+echo "........................k8s........................"
 
-echo "........................Kubeadm........................"
-
-sudo apt-get update
-sudo apt-get install -y apt-transport-https ca-certificates curl
-sudo curl -fsSLo /usr/share/keyrings/kubernetes-archive-keyring.gpg https://packages.cloud.google.com/apt/doc/apt-key.gpg
-echo "deb [signed-by=/usr/share/keyrings/kubernetes-archive-keyring.gpg] https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee /etc/apt/sources.list.d/kubernetes.list
-sudo apt-get update
-sudo apt-get install -y kubelet kubeadm kubectl
+curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
+sudo apt-add-repository "deb http://apt.kubernetes.io/ kubernetes-xenial main"
+sudo apt update
+sudo apt install -y kubelet kubeadm kubectl
 sudo apt-mark hold kubelet kubeadm kubectl
-systemctl enable kubelet
-
-kubeadm init --pod-network-cidr=192.168.0.0/16
-
+sudo kubeadm init --control-plane-endpoint=k8smaster.example.net --skip-phases=addon/kube-proxy
 mkdir -p $HOME/.kube
-cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
-chown $(id -u):$(id -g) $HOME/.kube/config
+sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+sudo chown $(id -u):$(id -g) $HOME/.kube/config
 
-echo "........................Calico........................"
+echo "........................Helm3........................"
 
-kubectl create -f https://raw.githubusercontent.com/projectcalico/calico/v3.24.1/manifests/tigera-operator.yaml
-kubectl create -f https://raw.githubusercontent.com/projectcalico/calico/v3.24.1/manifests/custom-resources.yaml
-kubectl taint nodes --all node-role.kubernetes.io/control-plane- node-role.kubernetes.io/master-
+curl https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash
 
-kubectl get nodes -o wide
+echo "........................Cillium........................"
+
+helm repo add cilium https://helm.cilium.io/
+helm install cilium cilium/cilium --version 1.12.0 --namespace kube-system
+
+CILIUM_CLI_VERSION=$(curl -s https://raw.githubusercontent.com/cilium/cilium-cli/master/stable.txt)
+CLI_ARCH=amd64
+if [ "$(uname -m)" = "aarch64" ]; then CLI_ARCH=arm64; fi
+curl -L --fail --remote-name-all https://github.com/cilium/cilium-cli/releases/download/${CILIUM_CLI_VERSION}/cilium-linux-${CLI_ARCH}.tar.gz{,.sha256sum}
+sha256sum --check cilium-linux-${CLI_ARCH}.tar.gz.sha256sum
+sudo tar xzvfC cilium-linux-${CLI_ARCH}.tar.gz /usr/local/bin
+rm cilium-linux-${CLI_ARCH}.tar.gz{,.sha256sum}
+
+sleep 200s
+
+kubectl get nodes
+cilium status
+cilium connectivity test
+
+# kubectl -n kube-system get pods --watch
+# yers| sudo bash k8smaster.sh
