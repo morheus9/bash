@@ -1,15 +1,14 @@
 #!/bin/bash
 
-echo "........................Update........................"
-
+sudo hostnamectl set-hostname "k8sworker1.example.net"
 apt update && apt upgrade
 
-echo "........................off Swap........................"
+echo "........................Swap........................"
 
 sudo swapoff -a
-sudo sed -i '/swap/s/^/#\ /' /etc/fstab
+sed -i '/swap/s/^/#\ /' /etc/fstab
 
-echo "........................Contenerd........................"
+echo "........................Config........................"
 
 cat <<EOF | sudo tee /etc/modules-load.d/k8s.conf
 overlay
@@ -25,28 +24,31 @@ net.bridge.bridge-nf-call-ip6tables = 1
 net.ipv4.ip_forward                 = 1
 EOF
 
-sysctl --system
-apt-get update
-apt-get -y install containerd
+sudo sysctl --system
 
-mkdir -p /etc/containerd
-containerd config default | sudo tee /etc/containerd/config.toml
-sed '/^SystemdCgroup = true before=[plugins."io.containerd.grpc.v1.cri".containerd.runtimes.runc.options]' test.txt /etc/containerd/config.toml
+echo "........................Contenerd........................"
 
-systemctl restart containerd
+sudo apt install -y curl gnupg2 software-properties-common apt-transport-https ca-certificates
+sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmour -o /etc/apt/trusted.gpg.d/docker.gpg
+sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+sudo apt update
+sudo apt install -y containerd.io
+containerd config default | sudo tee /etc/containerd/config.toml >/dev/null 2>&1
+sudo sed -i 's/SystemdCgroup \= false/SystemdCgroup \= true/g' /etc/containerd/config.toml
+sudo systemctl restart containerd
+sudo systemctl enable containerd
 
-echo "........................Kubeadm........................"
+echo "........................k8s........................"
 
-apt-get update
-apt-get install -y apt-transport-https ca-certificates curl
-curl -fsSLo /usr/share/keyrings/kubernetes-archive-keyring.gpg https://packages.cloud.google.com/apt/doc/apt-key.gpg
-echo "deb [signed-by=/usr/share/keyrings/kubernetes-archive-keyring.gpg] https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee /etc/apt/sources.list.d/kubernetes.list
-apt-get update
-apt-get install -y kubelet kubeadm kubectl
-apt-mark hold kubelet kubeadm kubectl
-systemctl enable kubelet
+curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
+sudo apt-add-repository "deb http://apt.kubernetes.io/ kubernetes-xenial main"
+sudo apt update
+sudo apt install -y kubelet kubeadm kubectl
+sudo apt-mark hold kubelet kubeadm kubectl
 
-echo "........................Calico........................"
+echo "........................Helm3........................"
 
-kubectl create -f https://raw.githubusercontent.com/projectcalico/calico/v3.24.1/manifests/tigera-operator.yaml
-kubectl create -f https://raw.githubusercontent.com/projectcalico/calico/v3.24.1/manifests/custom-resources.yaml
+curl https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash
+
+# kubectl -n kube-system get pods --watch
+# yer| sudo bash k8smaster.sh

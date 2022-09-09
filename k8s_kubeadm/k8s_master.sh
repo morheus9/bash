@@ -73,4 +73,4 @@ cilium status
 cilium connectivity test
 
 # kubectl -n kube-system get pods --watch
-# yers| sudo bash k8smaster.sh
+# yes | sudo bash k8smaster.sh
