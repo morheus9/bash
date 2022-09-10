@@ -1,7 +1,16 @@
 #!/bin/bash
 
-sudo hostnamectl set-hostname "k8smaster.example.net"
+# sudo hostnamectl set-hostname "k8smaster.example.net"
+# exec bash
+# yes | sudo bash k8s_master.sh
+
 apt update && apt upgrade
+
+cat <<EOT >>/etc/hosts
+192.168.1.110 k8smaster.example.net k8smaster
+192.168.1.111 k8sworker1.example.net k8sworker1
+192.168.1.112 k8sworker2.example.net k8sworker2
+EOT
 
 echo "........................Swap........................"
 
@@ -44,9 +53,8 @@ curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add
 sudo apt-add-repository "deb http://apt.kubernetes.io/ kubernetes-xenial main"
 sudo apt update
 sudo apt install -y kubelet kubeadm kubectl
-sudo apt-mark hold kubelet kubeadm kubectl
 
-kubeadm init --skip-phases=addon/kube-proxy --control-plane-endpoint=k8smaster.example.net
+sudo kubeadm init --pod-network-cidr=192.168.0.0/16 --control-plane-endpoint=k8smaster.example.net #--skip-phases=addon/kube-proxy
 mkdir -p $HOME/.kube
 sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
 sudo chown $(id -u):$(id -g) $HOME/.kube/config
@@ -55,22 +63,16 @@ echo "........................Helm3........................"
 
 curl https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash
 
-echo "........................Cillium........................"
+echo "........................Calico........................"
 
-helm repo add cilium https://helm.cilium.io/
-helm install cilium cilium/cilium --version 1.12.1 --namespace kube-system
+systemctl restart kubelet
 
-CILIUM_CLI_VERSION=$(curl -s https://raw.githubusercontent.com/cilium/cilium-cli/master/stable.txt)
-CLI_ARCH=amd64
-if [ "$(uname -m)" = "aarch64" ]; then CLI_ARCH=arm64; fi
-curl -L --fail --remote-name-all https://github.com/cilium/cilium-cli/releases/download/${CILIUM_CLI_VERSION}/cilium-linux-${CLI_ARCH}.tar.gz{,.sha256sum}
-sha256sum --check cilium-linux-${CLI_ARCH}.tar.gz.sha256sum
-sudo tar xzvfC cilium-linux-${CLI_ARCH}.tar.gz /usr/local/bin
-rm cilium-linux-${CLI_ARCH}.tar.gz{,.sha256sum}
+kubectl create -f https://raw.githubusercontent.com/projectcalico/calico/v3.24.1/manifests/tigera-operator.yaml
+kubectl create -f https://raw.githubusercontent.com/projectcalico/calico/v3.24.1/manifests/custom-resources.yaml
 
-kubectl get nodes
-cilium status
-cilium connectivity test
+# watch kubectl get pods -n calico-system
+# kubectl get nodes
+# kubectl taint nodes --all node-role.kubernetes.io/control-plane- node-role.kubernetes.io/master-
 
-# kubectl -n kube-system get pods --watch
-# yes | sudo bash k8smaster.sh
+# kubeadm token create --print-join-command
+# sudo apt-mark hold kubelet kubeadm kubectl

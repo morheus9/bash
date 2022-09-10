@@ -1,7 +1,16 @@
 #!/bin/bash
 
-sudo hostnamectl set-hostname "k8sworker1.example.net"
+# sudo hostnamectl set-hostname "k8sworker1.example.net"
+# exec bash
+# yes | sudo bash k8s_slaves.sh
+
 apt update && apt upgrade
+
+cat <<EOT >>/etc/hosts
+192.168.1.110 k8smaster.example.net k8smaster
+192.168.1.111 k8sworker1.example.net k8sworker1
+192.168.1.112 k8sworker2.example.net k8sworker2
+EOT
 
 echo "........................Swap........................"
 
@@ -45,10 +54,3 @@ sudo apt-add-repository "deb http://apt.kubernetes.io/ kubernetes-xenial main"
 sudo apt update
 sudo apt install -y kubelet kubeadm kubectl
 sudo apt-mark hold kubelet kubeadm kubectl
-
-echo "........................Helm3........................"
-
-curl https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash
-
-# kubectl -n kube-system get pods --watch
-# yer| sudo bash k8smaster.sh
