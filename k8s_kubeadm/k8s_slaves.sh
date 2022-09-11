@@ -4,13 +4,13 @@
 # exec bash
 # yes | sudo bash k8s_slaves.sh
 
-apt update && apt upgrade
+#  cat <<EOT >>/etc/hosts
+#  192.168.1.110 k8smaster.example.net k8smaster
+#  192.168.1.111 k8sworker1.example.net k8sworker1
+#  192.168.1.112 k8sworker2.example.net k8sworker2
+#  EOT
 
-cat <<EOT >>/etc/hosts
-192.168.1.110 k8smaster.example.net k8smaster
-192.168.1.111 k8sworker1.example.net k8sworker1
-192.168.1.112 k8sworker2.example.net k8sworker2
-EOT
+apt update && apt upgrade
 
 echo "........................Swap........................"
 
