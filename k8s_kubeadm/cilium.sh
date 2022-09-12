@@ -14,6 +14,8 @@ helm install cilium cilium/cilium --version 1.12.1 \
 --set k8sServiceHost=${API_SERVER_IP} \
 --set k8sServicePort=${API_SERVER_PORT}
 
+echo "........................Cilium_CLI........................"
+
 CILIUM_CLI_VERSION=$(curl -s https://raw.githubusercontent.com/cilium/cilium-cli/master/stable.txt)
 CLI_ARCH=amd64
 if [ "$(uname -m)" = "aarch64" ]; then CLI_ARCH=arm64; fi
