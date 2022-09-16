@@ -4,9 +4,10 @@ echo ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select tr
 sudo apt install ttf-mscorefonts-installer
 #Update
 sudo apt update && sudo apt full-upgrade
-#Kodecs+Gcc
+#Kodecs+Gcc+Nvidia
 sudo apt install ubuntu-restricted-extras libavcodec-extra
 sudo apt -y install build-essential
+sudo ubuntu-drivers autoinstall
 #IDE
 sudo snap install code --classic
 sudo snap install libreoffice
