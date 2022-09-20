@@ -49,7 +49,7 @@ sudo apt install -y curl gnupg2 software-properties-common apt-transport-https c
 sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmour -o /etc/apt/trusted.gpg.d/docker.gpg
 sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
 sudo apt update
-sudo apt install -y containerd.io
+sudo apt install -y runc containerd.io
 mkdir -p /etc/containerd
 containerd config default>/etc/containerd/config.toml
 sudo sed -i 's/SystemdCgroup \= false/SystemdCgroup \= true/g' /etc/containerd/config.toml
@@ -59,11 +59,11 @@ sudo systemctl enable kubelet
 sudo kubeadm config images pull --cri-socket /run/containerd/containerd.sock
 
 sudo kubeadm init \
-  --pod-network-cidr=10.244.0.0/16 \
-  --cri-socket /run/containerd/containerd.sock \
-  --upload-certs \
-  --control-plane-endpoint=k8smaster.example.net
-# --skip-phases=addon/kube-proxy 
+   --cri-socket /run/containerd/containerd.sock \
+   --upload-certs \
+   --control-plane-endpoint=k8smaster.example.net
+#  --skip-phases=addon/kube-proxy \
+№  --pod-network-cidr=10.244.0.0/16 \
 
 mkdir -p $HOME/.kube
 sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
