@@ -50,7 +50,6 @@ tar Cxzvf /opt/cni/bin cni-plugins-linux-amd64-v1.1.1.tgz
 # kubectl edit cm kubelet-config -n kube-system
 # cgroupDriver: systemd
 # /var/lib/kubelet/config.yaml
-sudo kubeadm config images pull --cri-socket /run/containerd/containerd.sock
 
 
 echo "........................Config........................"
@@ -86,6 +85,8 @@ systemctl enable --now kubelet
 
 
 echo "........................Init........................"
+sudo kubeadm config images pull --cri-socket /run/containerd/containerd.sock
+
 sudo kubeadm init \
    --pod-network-cidr=10.244.0.0/16 \
    --cri-socket /run/containerd/containerd.sock \
