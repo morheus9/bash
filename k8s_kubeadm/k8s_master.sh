@@ -29,9 +29,9 @@ sudo apt install -y runc containerd.io
 mkdir -p /etc/containerd
 containerd config default>/etc/containerd/config.toml
 sudo sed -i 's/SystemdCgroup \= false/SystemdCgroup \= true/g' /etc/containerd/config.toml
-sudo systemctl restart containerd
-sudo systemctl enable containerd
-sudo systemctl enable kubelet
+systemctl daemon-reload
+systemctl enable --now containerd
+systemctl enable --now kubelet
 
 wget https://github.com/containernetworking/plugins/releases/download/v1.1.1/cni-plugins-linux-amd64-v1.1.1.tgz
 mkdir -p /opt/cni/bin
@@ -54,8 +54,7 @@ net.bridge.bridge-nf-call-iptables  = 1
 net.bridge.bridge-nf-call-ip6tables = 1
 net.ipv4.ip_forward                 = 1
 EOF
-systemctl daemon-reload
-systemctl enable --now containerd
+sudo sysctl --system
 
 
 echo "........................kubelet, kubeadm, kubectl........................"
