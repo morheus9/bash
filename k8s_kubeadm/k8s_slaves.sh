@@ -14,20 +14,27 @@ cat <<EOT >>/etc/hosts
 192.168.1.112 k8sworker2.example.net k8sworker2
 EOT
 
-
-echo "........................kubelet, kubeadm, kubectl........................"
-sudo apt install curl wget apt-transport-https -y
-curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
-sudo apt-add-repository "deb http://apt.kubernetes.io/ kubernetes-xenial main"
-sudo apt update
-sudo apt install kubelet kubeadm kubectl -y
-sudo apt-mark hold kubelet kubeadm kubectl
-
-
 echo "........................Swap........................"
 sudo swapoff -a
 sed -i '/swap/s/^/#\ /' /etc/fstab
 
+echo "........................Contenerd........................"
+cd /tmp/
+wget https://github.com/containerd/containerd/releases/download/v1.6.8/containerd-1.6.8-linux-amd64.tar.gz
+tar Cxzvf /usr/local containerd-1.6.8-linux-amd64.tar.gz
+
+echo "........................Contenerd_service........................"
+wget https://raw.githubusercontent.com/containerd/containerd/main/containerd.service
+cp containerd.service /etc/systemd/system
+
+echo "........................Runc........................"
+wget https://github.com/opencontainers/runc/releases/download/v1.1.4/runc.amd64
+install -m 755 runc.amd64 /usr/local/sbin/runc
+
+echo "........................Cni_plugins........................"
+wget https://github.com/containernetworking/plugins/releases/download/v1.1.1/cni-plugins-linux-amd64-v1.1.1.tgz
+mkdir -p /opt/cni/bin
+tar Cxzvf /opt/cni/bin cni-plugins-linux-amd64-v1.1.1.tgz
 
 echo "........................Config........................"
 cat <<EOF | sudo tee /etc/modules-load.d/k8s.conf
@@ -42,22 +49,20 @@ net.bridge.bridge-nf-call-ip6tables = 1
 net.ipv4.ip_forward                 = 1
 EOF
 sudo sysctl --system
-
-
-echo "........................Contenerd........................"
-sudo apt install -y curl gnupg2 software-properties-common apt-transport-https ca-certificates
-sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmour -o /etc/apt/trusted.gpg.d/docker.gpg
-sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
-sudo apt update
-sudo apt install -y containerd.io
 mkdir -p /etc/containerd
 containerd config default>/etc/containerd/config.toml
-# containerd config default | sudo tee /etc/containerd/config.toml >/dev/null 2>&1
 sudo sed -i 's/SystemdCgroup \= false/SystemdCgroup \= true/g' /etc/containerd/config.toml
-sudo systemctl restart containerd
-sudo systemctl enable containerd
-sudo systemctl enable kubelet
+systemctl daemon-reload
+systemctl enable --now containerd
 
+echo "........................Kubelet, kubeadm, kubectl........................"
+sudo apt install curl wget apt-transport-https -y
+curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
+sudo apt-add-repository "deb http://apt.kubernetes.io/ kubernetes-xenial main"
+sudo apt update
+sudo apt install kubelet kubeadm kubectl -y
+sudo apt-mark hold kubelet kubeadm kubectl
+systemctl enable --now kubelet
 
 # sudo apt-mark hold kubelet kubeadm kubectl
 

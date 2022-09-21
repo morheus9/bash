@@ -35,10 +35,6 @@ wget https://github.com/containernetworking/plugins/releases/download/v1.1.1/cni
 mkdir -p /opt/cni/bin
 tar Cxzvf /opt/cni/bin cni-plugins-linux-amd64-v1.1.1.tgz
 
-# kubectl edit cm kubelet-config -n kube-system
-# cgroupDriver: systemd
-# /var/lib/kubelet/config.yaml
-
 echo "........................Config........................"
 cat <<EOF | sudo tee /etc/modules-load.d/k8s.conf
 overlay
