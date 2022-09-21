@@ -6,7 +6,6 @@
 # exec bash
 # sudo apt update
 # sudo apt -y full-upgrade
-# [ -f /var/run/reboot-required ] && sudo reboot -f
 
 cat <<EOT >>/etc/hosts
 192.168.1.110 k8smaster.example.net k8smaster
@@ -65,9 +64,3 @@ sudo apt-mark hold kubelet kubeadm kubectl
 systemctl enable --now kubelet
 
 # sudo apt-mark hold kubelet kubeadm kubectl
-
-
-
-
-
-
