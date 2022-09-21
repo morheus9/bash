@@ -63,4 +63,4 @@ sudo apt install kubelet kubeadm kubectl -y
 sudo apt-mark hold kubelet kubeadm kubectl
 systemctl enable --now kubelet
 
-# sudo apt-mark hold kubelet kubeadm kubectl
+# Reboot server!!!!!!1

@@ -70,8 +70,8 @@ sudo kubeadm init \
    --pod-network-cidr=10.244.0.0/16 \
    --cri-socket /run/containerd/containerd.sock \
    --upload-certs \
-   --control-plane-endpoint=k8smaster.example.net
-#  --skip-phases=addon/kube-proxy \
+   --control-plane-endpoint=k8smaster.example.net \
+   --skip-phases=addon/kube-proxy \
 
 mkdir -p $HOME/.kube
 sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
@@ -83,3 +83,5 @@ curl https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash
 kubeadm token create --print-join-command
 kubectl get nodes
 kubectl get pods -n kube-system
+
+# Reboot server!!!!!!1
