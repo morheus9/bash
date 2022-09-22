@@ -53,6 +53,7 @@ containerd config default>/etc/containerd/config.toml
 sudo sed -i 's/SystemdCgroup \= false/SystemdCgroup \= true/g' /etc/containerd/config.toml
 systemctl daemon-reload
 systemctl enable --now containerd
+systemctl daemon-reload
 
 echo "........................Kubelet, kubeadm, kubectl........................"
 sudo apt install curl wget apt-transport-https -y
