@@ -21,16 +21,18 @@ sha256sum --check cilium-linux-${CLI_ARCH}.tar.gz.sha256sum
 sudo tar xzvfC cilium-linux-${CLI_ARCH}.tar.gz /usr/local/bin
 rm cilium-linux-${CLI_ARCH}.tar.gz{,.sha256sum}
 
-echo "........................Cilium_ingress........................"
-helm upgrade cilium cilium/cilium --version 1.12.1 \
-    --namespace kube-system \
-    --reuse-values \
-    --set ingressController.enabled=true
-kubectl -n kube-system rollout restart deployment/cilium-operator
-kubectl -n kube-system rollout restart ds/cilium
+cilium install
+
+echo "........................Nginx-ingress........................"
+helm upgrade --install ingress-nginx ingress-nginx \
+    --repo https://kubernetes.github.io/ingress-nginx \
+    --namespace ingress-nginx --create-namespace \
+    --set controller.hostNetwork=true \
+    --set controller.hostPort.enabled=true \
+    --set controller.kind=DaemonSet \
+    --set controller.service.type=ClusterIP
 
 cilium status
-cilium connectivity test
 
 # kubectl -n kube-system get pods -l k8s-app=cilium
 # kubectl -n kube-system exec ds/cilium -- cilium status | grep KubeProxyReplacement

@@ -68,11 +68,11 @@ echo "........................Init........................"
 sudo kubeadm config images pull --cri-socket /run/containerd/containerd.sock
 
 sudo kubeadm init \
-   --pod-network-cidr=192.168.0.0/16 \  # for cilium: --pod-network-cidr=10.244.0.0/16
+   --pod-network-cidr=10.244.0.0/16 \  # for calico: --pod-network-cidr=192.168.0.0/16
    --cri-socket /run/containerd/containerd.sock \
    --upload-certs \
    --control-plane-endpoint=k8smaster.example.net \
-# for cilium: --skip-phases=addon/kube-proxy 
+   --skip-phases=addon/kube-proxy 
 
 mkdir -p $HOME/.kube
 sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
