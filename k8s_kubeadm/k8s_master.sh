@@ -85,4 +85,4 @@ kubeadm token create --print-join-command
 kubectl get nodes
 kubectl get pods -n kube-system
 
-# Reboot server!!!!!!1
+# Reboot server!!!!!!
