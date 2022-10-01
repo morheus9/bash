@@ -34,7 +34,4 @@ helm upgrade --install ingress-nginx ingress-nginx \
 
 cilium status
 
-# kubectl -n kube-system get pods -l k8s-app=cilium
-# kubectl -n kube-system exec ds/cilium -- cilium status | grep KubeProxyReplacement
-# kubectl -n kube-system exec ds/cilium -- cilium status --verbose
 # Info from cilium: https://docs.cilium.io/en/v1.9/gettingstarted/kubeproxy-free/
