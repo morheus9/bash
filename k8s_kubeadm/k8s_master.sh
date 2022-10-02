@@ -81,8 +81,5 @@ sudo chown $(id -u):$(id -g) $HOME/.kube/config
 echo "........................Helm3........................"
 curl https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash
 
-kubeadm token create --print-join-command
-kubectl get nodes
-kubectl get pods -n kube-system
 
 # Reboot server!!!!!!
