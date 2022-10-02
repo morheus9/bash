@@ -34,4 +34,9 @@ helm upgrade --install ingress-nginx ingress-nginx \
 
 cilium status
 
+kubeadm token create --print-join-command
+kubectl get nodes
+kubectl get pods -A
+
+# For to start dashboard kubernetes: kubectl proxy --address='0.0.0.0' --accept-hosts='.*'
 # Info from cilium: https://docs.cilium.io/en/v1.9/gettingstarted/kubeproxy-free/
