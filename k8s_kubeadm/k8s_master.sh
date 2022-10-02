@@ -67,7 +67,7 @@ systemctl enable --now kubelet
 echo "........................Init........................"
 sudo kubeadm config images pull --cri-socket /run/containerd/containerd.sock
 
-sudo kubeadm init \
+sudo kubeadm init
    --pod-network-cidr=10.244.0.0/16 \  # for calico: --pod-network-cidr=192.168.0.0/16
    --cri-socket /run/containerd/containerd.sock \
    --upload-certs \
