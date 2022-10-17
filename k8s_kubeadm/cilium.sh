@@ -10,7 +10,16 @@ helm install cilium cilium/cilium --version 1.12.2 \
     --namespace kube-system \
     --set kubeProxyReplacement=strict \
     --set k8sServiceHost=${API_SERVER_IP} \
-    --set k8sServicePort=${API_SERVER_PORT}
+    --set k8sServicePort=${API_SERVER_PORT} \
+    --set prometheus.enabled=true \
+    --set operator.prometheus.enabled=true \
+    --set hubble.metrics.enabled="{dns,drop,tcp,flow,icmp,http}"
+    
+# Grafana + Prometheus
+kubectl apply -f https://raw.githubusercontent.com/cilium/cilium/v1.12/examples/kubernetes/addons/prometheus/monitoring-example.yaml
+kubectl -n cilium-monitoring port-forward service/grafana --address 0.0.0.0 --address :: 3000:3000
+# http://localhost:3000/
+
 
 echo "........................Cilium_CLI........................"
 CILIUM_CLI_VERSION=$(curl -s https://raw.githubusercontent.com/cilium/cilium-cli/master/stable.txt)
@@ -39,4 +48,4 @@ kubectl get nodes
 kubectl get pods -A
 
 # For to start dashboard kubernetes: kubectl proxy --address='0.0.0.0' --accept-hosts='.*'
-# Info from cilium: https://docs.cilium.io/en/v1.9/gettingstarted/kubeproxy-free/
+# Info from cilium without kubeproxy: https://docs.cilium.io/en/v1.9/gettingstarted/kubeproxy-free/
