@@ -4,13 +4,11 @@
 
 echo "........................Cilium_without_kubeproxy........................"
 helm repo add cilium https://helm.cilium.io/
-API_SERVER_IP=192.168.1.110
-API_SERVER_PORT=6443
 helm install cilium cilium/cilium --version 1.12.2 \
     --namespace kube-system \
     --set kubeProxyReplacement=strict \
-    --set k8sServiceHost=${API_SERVER_IP} \
-    --set k8sServicePort=${API_SERVER_PORT} \
+    --set k8sServiceHost=192.168.1.110 \
+    --set k8sServicePort=6443 \
     --set prometheus.enabled=true \
     --set operator.prometheus.enabled=true \
     --set hubble.metrics.enabled="{dns,drop,tcp,flow,icmp,http}"
