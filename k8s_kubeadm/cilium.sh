@@ -15,7 +15,6 @@ helm install cilium cilium/cilium --version 1.12.2 \
     
 # Grafana + Prometheus
 kubectl apply -f https://raw.githubusercontent.com/cilium/cilium/v1.12/examples/kubernetes/addons/prometheus/monitoring-example.yaml
-kubectl -n cilium-monitoring port-forward service/grafana --address 0.0.0.0 --address :: 3000:3000
 # http://localhost:3000/
 
 
@@ -41,9 +40,12 @@ helm upgrade --install ingress-nginx ingress-nginx \
 
 cilium status
 
-kubeadm token create --print-join-command
-kubectl get nodes
-kubectl get pods -A
+# expose Grafana
+kubectl -n cilium-monitoring port-forward service/grafana --address 0.0.0.0 --address :: 3000:3000
 
+# kubeadm token create --print-join-command
+# kubectl get nodes
+# kubectl get pods -A
 # For to start dashboard kubernetes: kubectl proxy --address='0.0.0.0' --accept-hosts='.*'
+
 # Info from cilium without kubeproxy: https://docs.cilium.io/en/v1.9/gettingstarted/kubeproxy-free/
