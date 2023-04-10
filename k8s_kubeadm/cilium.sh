@@ -40,12 +40,19 @@ helm upgrade --install ingress-nginx ingress-nginx \
 
 cilium status
 
+kubeadm token create --print-join-command
+kubectl get nodes
+kubectl get pods -A
+
+
+# For to start dashboard kubernetes: kubectl proxy --address='0.0.0.0' --accept-hosts='.*'
 # expose Grafana
 kubectl -n cilium-monitoring port-forward service/grafana --address 0.0.0.0 --address :: 3000:3000
-
-# kubeadm token create --print-join-command
-# kubectl get nodes
-# kubectl get pods -A
-# For to start dashboard kubernetes: kubectl proxy --address='0.0.0.0' --accept-hosts='.*'
+# check_cri
+crictl --runtime-endpoint unix:///var/run/crio/crio.sock version
+# check_containerd
+crictl --runtime-endpoint unix:///var/run/containerd/containerd.sock version
+# check_cri-dockerd
+crictl --runtime-endpoint unix:///var/run/cri-dockerd.sock version
 
 # Info from cilium without kubeproxy: https://docs.cilium.io/en/v1.9/gettingstarted/kubeproxy-free/
