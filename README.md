@@ -36,4 +36,6 @@ ansible --version
 molecule --version
 python3.11 -V
 yes | sudo bash ubuntu.sh
+sudo nano ~/.bashrc
+alias upg="sudo apt update && sudo apt upgrade"
 ```
