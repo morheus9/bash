@@ -28,7 +28,9 @@ sudo apt install python3.11 python3.11-venv
 ```
 sudo apt install python3-pip
 pip3 install "ansible-lint"
-python3 -m pip install --user ansible "molecule[docker]"
+python3.11 -m pip install ansible molecule
+python3 -m pip install --upgrade --user ansible
+python3.11 -m pip uninstall ansible molecule
 ```
 --------------------------------------------------------------------
 ```
