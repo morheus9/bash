@@ -1,7 +1,12 @@
-sudo pacman -Sy - обновить СПИСОК пакетов
-sudo pacman -Syyu - обновить все пакеты
+Обновить СПИСОК пакетов:
+```
+sudo pacman -Sy
+```
+Обновить все пакеты
+```
+sudo pacman -Syyu - 
 yay -Syu - обновить все пакеты (+aur)
-
+```
 sudo pacman -S foo - установить пакет
 yay -S foo - установить пакет
 
