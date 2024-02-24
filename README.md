@@ -30,6 +30,11 @@ sudo pacman -Qm
 ```
 yay -Yc
 ```
+Список из AUR:
+```
+visual-studio-code-bin 1.86.2-1
+yandex-browser 24.1.1.940-1
+```
 _____________________________________________________________________
 
 ## FOR MY UBUNTU
