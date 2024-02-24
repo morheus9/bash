@@ -35,8 +35,8 @@ yay -Yc
 visual-studio-code-bin
 yandex-browser
 ```
-+ [Warp-terminal](https://www.warp.dev)
-+ [Poetry](https://python-poetry.org/docs/)
+[Warp-terminal](https://www.warp.dev)
+[Poetry](https://python-poetry.org/docs/)
 _____________________________________________________________________
 
 
