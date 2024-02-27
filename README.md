@@ -23,8 +23,9 @@ sudo add-apt-repository ppa:deadsnakes/ppa
 sudo apt update
 sudo apt install python3.11 python3.11-venv
 ```
-[Warp-terminal](https://www.warp.dev)
 
+[Warp-terminal](https://www.warp.dev)
+--------------------------------------------------------------------
 [Poetry](https://python-poetry.org/docs/)
 --------------------------------------------------------------------
 ### Ansible + molecule + pip
