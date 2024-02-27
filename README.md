@@ -1,48 +1,4 @@
-## FOR MY ARCH
-
-Обновить список пакетов
-```
-sudo pacman -Sy
-```
-Обновить все пакеты
-```
-sudo pacman -Syyu
-```
-Обновить все пакеты (+AUR)
-```
-yay -Syu
-```
-Установить пакет
-```
-sudo pacman -S foo
-yay -S foo
-```
-Удалить пакет и зависимости
-```
-sudo pacman -Rns foo
-yay -Rns foo
-```
-Найти пакеты AUR
-```
-sudo pacman -Qm
-```
-Найти ненужные зависимости
-```
-yay -Yc
-```
-Список из AUR:
-```
-visual-studio-code-bin
-yandex-browser
-```
-[Warp-terminal](https://www.warp.dev)
-
-[Poetry](https://python-poetry.org/docs/)
-_____________________________________________________________________
-
-
-
-## FOR MY UBUNTU
+## FOR UBUNTU
 
 ### Update
 ```
@@ -85,3 +41,46 @@ yes | sudo bash ubuntu.sh
 sudo nano ~/.bashrc
 alias upg="sudo apt update && sudo apt upgrade"
 ```
+____________________________________________________________________
+
+
+
+
+## FOR ARCH
+
+Обновить список пакетов
+```
+sudo pacman -Sy
+```
+Обновить все пакеты
+```
+sudo pacman -Syyu
+```
+Обновить все пакеты (+AUR)
+```
+yay -Syu
+```
+Установить пакет
+```
+sudo pacman -S foo
+yay -S foo
+```
+Удалить пакет и зависимости
+```
+sudo pacman -Rns foo
+yay -Rns foo
+```
+Найти пакеты AUR
+```
+sudo pacman -Qm
+```
+Найти ненужные зависимости
+```
+yay -Yc
+```
+Список из AUR:
+```
+visual-studio-code-bin
+yandex-browser
+```
+
