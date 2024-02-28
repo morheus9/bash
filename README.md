@@ -24,7 +24,9 @@ sudo apt update
 sudo apt install python3.11 python3.11-venv
 ```
 [Yandex](https://browser.yandex.ru)
+--------------------------------------------------------------------
 [Warp-terminal](https://www.warp.dev)
+--------------------------------------------------------------------
 [Poetry](https://python-poetry.org/docs/)
 --------------------------------------------------------------------
 ### Ansible + molecule + pip
