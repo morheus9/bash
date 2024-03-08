@@ -23,6 +23,12 @@ sudo add-apt-repository ppa:deadsnakes/ppa
 sudo apt update
 sudo apt install python3.11 python3.11-venv
 ```
+### Pycharm and Vscode
+```
+sudo apt install apt-transport-https && \
+sudo snap install pycharm-community --classic &&\
+sudo snap install code
+```
 [Yandex](https://browser.yandex.ru)
 --------------------------------------------------------------------
 [Warp-terminal](https://www.warp.dev)
@@ -32,9 +38,7 @@ sudo apt install python3.11 python3.11-venv
 [Docker](https://docs.docker.com/desktop/install/ubuntu/#install-docker-desktop)
 --------------------------------------------------------------------
 
-Pycharm
 
-Vscode
 
 ### Ansible + molecule + pip
 ```
