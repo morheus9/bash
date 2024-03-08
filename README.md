@@ -33,6 +33,7 @@ sudo apt install python3.11 python3.11-venv
 --------------------------------------------------------------------
 
 Pycharm
+
 Vscode
 
 ### Ansible + molecule + pip
