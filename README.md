@@ -29,6 +29,12 @@ sudo apt install python3.11 python3.11-venv
 --------------------------------------------------------------------
 [Poetry](https://python-poetry.org/docs/)
 --------------------------------------------------------------------
+[Docker](https://docs.docker.com/desktop/install/ubuntu/#install-docker-desktop)
+--------------------------------------------------------------------
+
+Pycharm
+Vscode
+
 ### Ansible + molecule + pip
 ```
 sudo apt install python3-pip
