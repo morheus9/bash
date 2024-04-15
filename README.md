@@ -1,5 +1,5 @@
 ## FOR UBUNTU
-
+[click](ubuntu.md)
 ### Update
 ```
 sudo apt update && sudo apt upgrade
