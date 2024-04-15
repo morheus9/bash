@@ -1,12 +1,12 @@
-## FEDORA
+#### FEDORA
 
 [click](fedora.md)
 
-## UBUNTU
+#### UBUNTU
 
 [click](ubuntu.md)
 
-## ARCH
+#### ARCH
 
 [click](arch.md)
 
