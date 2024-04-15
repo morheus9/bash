@@ -1,6 +1,6 @@
 ### Update
 ```
-sudo apt update && sudo apt upgrade
+sudo dnf upgrade
 ```
 --------------------------------------------------------------------
 ### Kodecs+Gcc+Nvidia
