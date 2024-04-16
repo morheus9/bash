@@ -3,7 +3,7 @@
 sudo dnf upgrade -y --refresh
 ```
 --------------------------------------------------------------------
-If you have SSD add to fstab parameters after "compress=zstd:1" for sections: /, /home, /var/log:
+##### If you have SSD add to fstab parameters after "compress=zstd:1" for sections: /, /home, /var/log:
 --------------------------------------------------------------------
 ```
 sudo gnome-text-editor /etc/fstab:
@@ -11,7 +11,7 @@ sudo gnome-text-editor /etc/fstab:
 ,defaults,noatime,discard=async
 ```
 --------------------------------------------------------------------
-##### Doing dnf faster:
+ Doing dnf faster:
 ```
 sudo gnome-text-editor /etc/dnf/dnf.conf
 
