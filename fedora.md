@@ -87,17 +87,19 @@ sudo dnf install gnome-tweaks
 sudo dnf install timeshift
 ```
 --------------------------------------------------------------------
+##### Go
+```
+sudo dnf install golang
+```
+##### [Go](https://go.dev/doc/install)
+--------------------------------------------------------------------
 ##### [Yandex](https://browser.yandex.ru)
 --------------------------------------------------------------------
 ##### [Warp-terminal](https://www.warp.dev)
 --------------------------------------------------------------------
 ##### [Docker](https://docs.docker.com/desktop/install/fedora)
 --------------------------------------------------------------------
-##### [Go](https://go.dev/doc/install)
---------------------------------------------------------------------
-```
-sudo dnf install golang
-```
+
 
 
 ##### Ansible + molecule + pip!!!!!!!!!!!!!!!!!!!!!!!!!!
