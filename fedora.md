@@ -3,7 +3,7 @@
 sudo dnf upgrade -y --refresh
 ```
 --------------------------------------------------------------------
-### If you have SSD pen fstab by command:
+##### If you have SSD pen fstab by command:
 ```
 sudo gnome-text-editor /etc/fstab
 ```
@@ -12,11 +12,11 @@ and add parameters after "compress=zstd:1" for sections: /, /home, /var/log:
 ,defaults,noatime,discard=async
 ```
 --------------------------------------------------------------------
-### Doing dnf faster:
+##### Doing dnf faster:
 ```
 sudo gnome-text-editor /etc/dnf/dnf.conf
 ```
-add there:
+##### there:
 ```
 fastestmirror=True
 max_parallel_downloads=10
@@ -24,40 +24,40 @@ defaultyes=True
 keepcache=True
 ```
 --------------------------------------------------------------------
-### To add RPM Fusion repositories and non-free RPM Fusion repositories use:
+##### To add RPM Fusion repositories and non-free RPM Fusion repositories use:
 ```
 sudo dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
 sudo dnf install https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
 ```
 --------------------------------------------------------------------
-### Flatpak
+##### Flatpak
 ```
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 ```
 --------------------------------------------------------------------
-### Nvidia
+##### Nvidia
 ```
 sudo dnf install xorg-x11-drv-nvidia-470xx akmod-nvidia-470xx
 ```
 --------------------------------------------------------------------
-### Kodecs
+##### Kodecs
 ```
 sudo dnf install gstreamer1-plugins-{bad-\*,good-\*,base} gstreamer1-plugin-openh264 gstreamer1-libav --exclude=gstreamer1-plugins-bad-free-devel
 sudo dnf install lame\* --exclude=lame-devel
 sudo dnf group upgrade --with-optional Multimedia
 ```
 --------------------------------------------------------------------
-### Gcc
+##### Gcc
 ```
 sudo dnf install make automake gcc gcc-c++ kernel-devel
 ```
 --------------------------------------------------------------------
-### Git
+##### Git
 ```
 sudo dnf install git-all
 ```
 --------------------------------------------------------------------
-### Python !!!!!!!!!!!!!!!!!!
+##### Python !!!!!!!!!!!!!!!!!!
 ```
 sudo add-apt-repository ppa:deadsnakes/ppa
 sudo apt update
@@ -68,7 +68,7 @@ python3.11 -V && python3.12 -V
 [Poetry](https://python-poetry.org/docs/)
 ```
 --------------------------------------------------------------------
-### Vscode
+##### Vscode
 ```
 sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
 sudo sh -c 'echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" > /etc/yum.repos.d/vscode.repo' \
@@ -76,22 +76,22 @@ sudo sh -c 'echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.m
 && sudo dnf install code
 ```
 --------------------------------------------------------------------
-### Gnome Boxes
+##### Gnome Boxes
 ```
 flatpak install flathub org.gnome.Boxes
 ```
 --------------------------------------------------------------------
-### Gnome-tweaks
+##### Gnome-tweaks
 ```
 sudo dnf install gnome-tweaks
 ```
 --------------------------------------------------------------------
-### Timeshift
+##### Timeshift
 ```
 sudo dnf install timeshift
 ```
 --------------------------------------------------------------------
-[Yandex](https://browser.yandex.ru)
+##### [Yandex](https://browser.yandex.ru)
 --------------------------------------------------------------------
 [Warp-terminal](https://www.warp.dev)
 --------------------------------------------------------------------
