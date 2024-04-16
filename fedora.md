@@ -56,7 +56,6 @@ sudo sh -c 'echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.m
 ### Ansible + molecule + pip!!!!!!!!!!!!!!!!!!!!!!!!!!
 ```
 sudo dnf install -y ansible
-ansible --version
 pip3 install "ansible-lint"
 python3.11 -m pip install ansible molecule
 python3 -m pip install --upgrade --user ansible
