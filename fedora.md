@@ -3,7 +3,7 @@
 sudo dnf upgrade -y --refresh
 ```
 ##### If you have SSD add to fstab parameters after "compress=zstd:1" for sections: /, /home, /var/log:
---------------------------------------------------------------------
+##### --------------------------------------------------------------------
 ```
 sudo gnome-text-editor /etc/fstab:
 
