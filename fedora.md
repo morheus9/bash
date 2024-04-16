@@ -15,9 +15,7 @@ and add parameters after "compress=zstd:1" for sections: /, /home, /var/log:
 ##### Doing dnf faster:
 ```
 sudo gnome-text-editor /etc/dnf/dnf.conf
-```
-##### there:
-```
+
 fastestmirror=True
 max_parallel_downloads=10
 defaultyes=True
