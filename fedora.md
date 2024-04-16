@@ -1,24 +1,52 @@
 ### Update
 ```
-sudo dnf upgrade -y
+sudo dnf upgrade -y --refresh
 ```
 --------------------------------------------------------------------
-Add the RPM repositories using the following commands in the terminal. For free repositories, use:
+### If you have SSD pen fstab by command:
+```
+sudo gnome-text-editor /etc/fstab
+```
+and add parameters after "compress=zstd:1" for sections: /, /home, /var/log:
+```
+,defaults,noatime,discard=async
+```
+--------------------------------------------------------------------
+### Doing dnf faster:
+```
+sudo gnome-text-editor /etc/dnf/dnf.conf
+```
+add there:
+```
+fastestmirror=True
+max_parallel_downloads=10
+defaultyes=True
+keepcache=True
+```
+--------------------------------------------------------------------
+### To add RPM Fusion repositories and non-free RPM Fusion repositories use:
 ```
 sudo dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
+sudo dnf install https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
 ```
-For non-free repositories, use:
+--------------------------------------------------------------------
+### Flatpak
 ```
-https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 ```
+--------------------------------------------------------------------
 ### Nvidia
 ```
 sudo dnf install xorg-x11-drv-nvidia-470xx akmod-nvidia-470xx
 ```
-optional for cuda up to 11.4 support
+--------------------------------------------------------------------
+### Kodecs
 ```
-sudo dnf install xorg-x11-drv-nvidia-470xx-cuda 
+sudo dnf install gstreamer1-plugins-{bad-\*,good-\*,base} gstreamer1-plugin-openh264 gstreamer1-libav --exclude=gstreamer1-plugins-bad-free-devel
+sudo dnf install lame\* --exclude=lame-devel
+sudo dnf group upgrade --with-optional Multimedia
 ```
+--------------------------------------------------------------------
 ### Gcc
 ```
 sudo dnf install make automake gcc gcc-c++ kernel-devel
@@ -39,6 +67,7 @@ sudo apt install python3.12 python3.12-venv
 python3.11 -V && python3.12 -V
 [Poetry](https://python-poetry.org/docs/)
 ```
+--------------------------------------------------------------------
 ### Vscode
 ```
 sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
@@ -46,12 +75,34 @@ sudo sh -c 'echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.m
 && dnf check-update \
 && sudo dnf install code
 ```
+--------------------------------------------------------------------
+### Gnome Boxes
+```
+flatpak install flathub org.gnome.Boxes
+```
+--------------------------------------------------------------------
+### Gnome-tweaks
+```
+sudo dnf install gnome-tweaks
+```
+--------------------------------------------------------------------
+### Timeshift
+```
+sudo dnf install timeshift
+```
+--------------------------------------------------------------------
 [Yandex](https://browser.yandex.ru)
 --------------------------------------------------------------------
 [Warp-terminal](https://www.warp.dev)
 --------------------------------------------------------------------
-[Docker](https://docs.docker.com/desktop/install/fedora/)
+[Docker](https://docs.docker.com/desktop/install/fedora)
 --------------------------------------------------------------------
+[Go](https://go.dev/doc/install)
+--------------------------------------------------------------------
+```
+sudo dnf install golang
+```
+
 
 ### Ansible + molecule + pip!!!!!!!!!!!!!!!!!!!!!!!!!!
 ```
@@ -65,3 +116,7 @@ python3.11 -m pip uninstall ansible molecule
 ```
 ansible --version
 molecule --version
+```
+--------------------------------------------------------------------
+[Plafon](https://plafon.gitbook.io/fedora-zero)
+--------------------------------------------------------------------
