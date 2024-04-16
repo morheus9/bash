@@ -87,11 +87,10 @@ sudo dnf install gnome-tweaks
 sudo dnf install timeshift
 ```
 --------------------------------------------------------------------
-##### Go
+##### [Go](https://go.dev/doc/install)
 ```
 sudo dnf install golang
 ```
-##### [Go](https://go.dev/doc/install)
 --------------------------------------------------------------------
 ##### [Yandex](https://browser.yandex.ru)
 --------------------------------------------------------------------
