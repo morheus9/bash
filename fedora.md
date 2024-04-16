@@ -50,9 +50,8 @@ sudo sh -c 'echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.m
 --------------------------------------------------------------------
 [Warp-terminal](https://www.warp.dev)
 --------------------------------------------------------------------
-[Docker](https://docs.docker.com/desktop/install/ubuntu/#install-docker-desktop)
+[Docker](https://docs.docker.com/desktop/install/fedora/)
 --------------------------------------------------------------------
-
 ### Ansible + molecule + pip!!!!!!!!!!!!!!!!!!!!!!!!!!
 ```
 sudo dnf install -y ansible
