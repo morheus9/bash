@@ -93,12 +93,12 @@ sudo dnf install timeshift
 --------------------------------------------------------------------
 ##### [Yandex](https://browser.yandex.ru)
 --------------------------------------------------------------------
-[Warp-terminal](https://www.warp.dev)
+##### [Warp-terminal](https://www.warp.dev)
 --------------------------------------------------------------------
-[Docker](https://docs.docker.com/desktop/install/fedora)
+##### [Docker](https://docs.docker.com/desktop/install/fedora)
 --------------------------------------------------------------------
-[Go](https://go.dev/doc/install)
---------------------------------------------------------------------
+##### [Go](https://go.dev/doc/install)
+##### --------------------------------------------------------------------
 ```
 sudo dnf install golang
 ```
