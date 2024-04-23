@@ -31,11 +31,6 @@ sudo dnf install https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfre
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 ```
 --------------------------------------------------------------------
-##### Nvidia
-```
-sudo dnf install xorg-x11-drv-nvidia-470xx akmod-nvidia-470xx
-```
---------------------------------------------------------------------
 ##### Kodecs
 ```
 sudo dnf install gstreamer1-plugins-{bad-\*,good-\*,base} gstreamer1-plugin-openh264 gstreamer1-libav --exclude=gstreamer1-plugins-bad-free-devel
