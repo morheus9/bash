@@ -53,17 +53,6 @@ sudo dnf install make automake gcc gcc-c++ kernel-devel
 sudo dnf install git-all
 ```
 --------------------------------------------------------------------
-##### Python !!!!!!!!!!!!!!!!!!
-```
-sudo add-apt-repository ppa:deadsnakes/ppa
-sudo apt update
-sudo apt install python3-pip
-sudo apt install python3.11 python3.11-venv
-sudo apt install python3.12 python3.12-venv
-python3.11 -V && python3.12 -V
-[Poetry](https://python-poetry.org/docs/)
-```
---------------------------------------------------------------------
 ##### Vscode
 ```
 sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
@@ -72,9 +61,11 @@ sudo sh -c 'echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.m
 && sudo dnf install code
 ```
 --------------------------------------------------------------------
-##### Gnome Boxes
+##### Gnome dock
 ```
-flatpak install flathub org.gnome.Boxes
+sudo dnf install gnome-shell-extension-dash-to-dock
+sudo dnf install gnome-extensions-app
+search app "Extensions"
 ```
 --------------------------------------------------------------------
 ##### Gnome-tweaks
@@ -98,7 +89,8 @@ sudo dnf install golang
 --------------------------------------------------------------------
 ##### [Docker](https://docs.docker.com/desktop/install/fedora)
 --------------------------------------------------------------------
-
+##### [Poetry](https://python-poetry.org/docs/)
+--------------------------------------------------------------------
 
 
 ##### Ansible + molecule + pip!!!!!!!!!!!!!!!!!!!!!!!!!!
