@@ -88,6 +88,9 @@ pass init <your_generated_gpg-id_public_key>
 ##### [Warp-terminal](https://www.warp.dev)
 --------------------------------------------------------------------
 ##### [Poetry](https://python-poetry.org/docs/)
+--------------------------------------------------------------------
+
+
 
 
 
