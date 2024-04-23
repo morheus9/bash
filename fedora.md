@@ -1,6 +1,7 @@
 ##### Update
 ```
 sudo dnf upgrade -y --refresh
+sudo dnf groupupdate core
 ```
 --------------------------------------------------------------------
 ##### If you have SSD add to fstab parameters after "compress=zstd:1" for sections: /, /home, /var/log:
@@ -10,7 +11,13 @@ sudo gnome-text-editor /etc/fstab:
 btrfs   subvol=home,compress=zstd:1,defaults,noatime,discard=async 0 0
 ```
 --------------------------------------------------------------------
- Doing dnf faster:
+##### Firmware updates:
+```
+sudo fwupdmgr refresh --force
+sudo fwupdmgr get-updates
+sudo fwupdmgr update
+```
+##### Doing dnf faster:
 ```
 sudo gnome-text-editor /etc/dnf/dnf.conf
 
@@ -66,6 +73,11 @@ search app "Extensions"
 ##### Gnome-tweaks
 ```
 sudo dnf install gnome-tweaks -y
+```
+--------------------------------------------------------------------
+##### Transmission
+```
+sudo dnf install -y transmission
 ```
 --------------------------------------------------------------------
 ##### Timeshift
