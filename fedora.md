@@ -33,19 +33,19 @@ flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flat
 --------------------------------------------------------------------
 ##### Kodecs
 ```
-sudo dnf install gstreamer1-plugins-{bad-\*,good-\*,base} gstreamer1-plugin-openh264 gstreamer1-libav --exclude=gstreamer1-plugins-bad-free-devel
-sudo dnf install lame\* --exclude=lame-devel
-sudo dnf group upgrade --with-optional Multimedia
+sudo dnf install gstreamer1-plugins-{bad-\*,good-\*,base} gstreamer1-plugin-openh264 gstreamer1-libav --exclude=gstreamer1-plugins-bad-free-devel -y
+sudo dnf install lame\* --exclude=lame-devel -y
+sudo dnf group upgrade --with-optional Multimedia -y
 ```
 --------------------------------------------------------------------
 ##### Gcc
 ```
-sudo dnf install make automake gcc gcc-c++ kernel-devel
+sudo dnf install make automake gcc gcc-c++ kernel-devel -y
 ```
 --------------------------------------------------------------------
 ##### Git
 ```
-sudo dnf install git-all
+sudo dnf install git-all -y
 ```
 --------------------------------------------------------------------
 ##### Vscode
@@ -53,39 +53,42 @@ sudo dnf install git-all
 sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
 sudo sh -c 'echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" > /etc/yum.repos.d/vscode.repo' \
 && dnf check-update \
-&& sudo dnf install code
+&& sudo dnf install code -y
 ```
 --------------------------------------------------------------------
 ##### Gnome dock
 ```
-sudo dnf install gnome-shell-extension-dash-to-dock
-sudo dnf install gnome-extensions-app
+sudo dnf install gnome-shell-extension-dash-to-dock -y
+sudo dnf install gnome-extensions-app -y
 search app "Extensions"
 ```
 --------------------------------------------------------------------
 ##### Gnome-tweaks
 ```
-sudo dnf install gnome-tweaks
+sudo dnf install gnome-tweaks -y
 ```
 --------------------------------------------------------------------
 ##### Timeshift
 ```
-sudo dnf install timeshift
+sudo dnf install timeshift -y
 ```
 --------------------------------------------------------------------
 ##### [Go](https://go.dev/doc/install)
 ```
-sudo dnf install golang
+sudo dnf install golang -y
 ```
---------------------------------------------------------------------
-##### [Yandex](https://browser.yandex.ru)
---------------------------------------------------------------------
-##### [Warp-terminal](https://www.warp.dev)
 --------------------------------------------------------------------
 ##### [Docker](https://docs.docker.com/desktop/install/fedora)
 --------------------------------------------------------------------
-##### [Poetry](https://python-poetry.org/docs/)
+```
+gpg --generate-key
+pass init <your_generated_gpg-id_public_key>
+```
 --------------------------------------------------------------------
+##### [Warp-terminal](https://www.warp.dev)
+--------------------------------------------------------------------
+##### [Poetry](https://python-poetry.org/docs/)
+
 
 
 ##### Ansible + molecule + pip!!!!!!!!!!!!!!!!!!!!!!!!!!
