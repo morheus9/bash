@@ -7,7 +7,7 @@ sudo dnf upgrade -y --refresh
 ```
 sudo gnome-text-editor /etc/fstab:
 
-,defaults,noatime,discard=async
+btrfs   subvol=home,compress=zstd:1,defaults,noatime,discard=async 0 0
 ```
 --------------------------------------------------------------------
  Doing dnf faster:
