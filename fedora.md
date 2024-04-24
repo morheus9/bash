@@ -1,22 +1,29 @@
+##### To add 'Fluthub', 'RPM Fusion repositories' and 'non-free RPM Fusion repositories' use:
+```
+sudo dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm -y \
+&& sudo dnf install https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm -y \
+&& flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo -y
+```
+--------------------------------------------------------------------
 ##### Update
 ```
 sudo dnf upgrade -y --refresh
 sudo dnf groupupdate core
 ```
 --------------------------------------------------------------------
+##### Firmware updates:
+```
+sudo fwupdmgr refresh --force \
+&& sudo fwupdmgr get-updates \
+&& sudo fwupdmgr update
+```
+--------------------------------------------------------------------
 ##### If you have SSD add to fstab parameters after "compress=zstd:1" for sections: /, /home, /var/log:
 ```
-sudo gnome-text-editor /etc/fstab:
-
+sudo gnome-text-editor /etc/fstab
 btrfs   subvol=home,compress=zstd:1,defaults,noatime,discard=async 0 0
 ```
 --------------------------------------------------------------------
-##### Firmware updates:
-```
-sudo fwupdmgr refresh --force
-sudo fwupdmgr get-updates
-sudo fwupdmgr update
-```
 ##### Doing dnf faster:
 ```
 sudo gnome-text-editor /etc/dnf/dnf.conf
@@ -25,17 +32,6 @@ fastestmirror=True
 max_parallel_downloads=10
 defaultyes=True
 keepcache=True
-```
---------------------------------------------------------------------
-##### To add RPM Fusion repositories and non-free RPM Fusion repositories use:
-```
-sudo dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
-sudo dnf install https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
-```
---------------------------------------------------------------------
-##### Flatpak
-```
-flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 ```
 --------------------------------------------------------------------
 ##### Kodecs
@@ -63,16 +59,10 @@ sudo sh -c 'echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.m
 && sudo dnf install code -y
 ```
 --------------------------------------------------------------------
-##### Gnome dock
+##### Gnome dock and Gnome-tweaks
 ```
-sudo dnf install gnome-shell-extension-dash-to-dock -y
-sudo dnf install gnome-extensions-app -y
-search app "Extensions"
-```
---------------------------------------------------------------------
-##### Gnome-tweaks
-```
-sudo dnf install gnome-tweaks -y
+sudo dnf install gnome-tweaks gnome-shell-extension-dash-to-dock gnome-extensions-app -y
+search app "Extensions" and enable dock
 ```
 --------------------------------------------------------------------
 ##### Transmission
