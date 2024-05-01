@@ -79,6 +79,10 @@ sudo dnf install timeshift -y
 ```
 sudo dnf install golang -y
 ```
+##### python3-pip
+```
+sudo dnf install python3-pip -y
+```
 --------------------------------------------------------------------
 ##### [Docker](https://docs.docker.com/desktop/install/fedora)
 --------------------------------------------------------------------
@@ -89,8 +93,8 @@ pass init <your_generated_gpg-id_public_key>
 --------------------------------------------------------------------
 ##### [Warp-terminal](https://www.warp.dev)
 --------------------------------------------------------------------
-##### [Poetry](https://python-poetry.org/docs/)
---------------------------------------------------------------------
+
+
 
 
 
