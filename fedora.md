@@ -7,8 +7,8 @@ sudo dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-rele
 --------------------------------------------------------------------
 ##### Update
 ```
-sudo dnf upgrade -y --refresh
-sudo dnf groupupdate core
+sudo dnf upgrade -y --refresh \
+&& sudo dnf groupupdate core
 ```
 --------------------------------------------------------------------
 ##### Firmware updates:
@@ -34,16 +34,12 @@ defaultyes=True
 keepcache=True
 ```
 --------------------------------------------------------------------
-##### Kodecs
+##### Kodecs + Gcc
 ```
-sudo dnf install gstreamer1-plugins-{bad-\*,good-\*,base} gstreamer1-plugin-openh264 gstreamer1-libav --exclude=gstreamer1-plugins-bad-free-devel -y
-sudo dnf install lame\* --exclude=lame-devel -y
-sudo dnf group upgrade --with-optional Multimedia -y
-```
---------------------------------------------------------------------
-##### Gcc
-```
-sudo dnf install make automake gcc gcc-c++ kernel-devel -y
+sudo dnf install gstreamer1-plugins-{bad-\*,good-\*,base} gstreamer1-plugin-openh264 gstreamer1-libav --exclude=gstreamer1-plugins-bad-free-devel -y \
+&& sudo dnf install lame\* --exclude=lame-devel -y \
+&& sudo dnf group upgrade --with-optional Multimedia -y \
+&& sudo dnf install make automake gcc gcc-c++ kernel-devel -y
 ```
 --------------------------------------------------------------------
 ##### Git
@@ -67,7 +63,7 @@ search app "Extensions" and enable dock
 --------------------------------------------------------------------
 ##### Transmission
 ```
-sudo dnf install -y transmission
+sudo dnf install transmission -y
 ```
 --------------------------------------------------------------------
 ##### Timeshift
@@ -79,9 +75,9 @@ sudo dnf install timeshift -y
 ```
 sudo dnf install golang -y
 ```
-##### python3-pip
+##### [UV for python](https://astral.sh/blog/uv)
 ```
-sudo dnf install python3-pip -y
+curl -LsSf https://astral.sh/uv/install.sh | sh
 ```
 --------------------------------------------------------------------
 ##### [Docker](https://docs.docker.com/desktop/install/fedora)
