@@ -1,21 +1,21 @@
-### Update
+##### Update
 ```
 sudo apt update && sudo apt upgrade
 ```
 --------------------------------------------------------------------
-### Kodecs+Gcc+Nvidia
+##### Kodecs+Gcc+Nvidia
 ```
 sudo apt install ubuntu-restricted-extras libavcodec-extra
 sudo apt -y install build-essential
 sudo ubuntu-drivers autoinstall
 ```
 --------------------------------------------------------------------
-### Git
+##### Git
 ```
 sudo apt install git
 ```
 --------------------------------------------------------------------
-### Python
+##### Python
 ```
 sudo add-apt-repository ppa:deadsnakes/ppa
 sudo apt update
@@ -37,7 +37,7 @@ python3.11 -V && python3.12 -V
 
 
 
-### Ansible + molecule + pip
+##### Ansible + molecule + pip
 ```
 sudo apt install python3-pip
 pip3 install "ansible-lint"
