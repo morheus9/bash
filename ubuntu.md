@@ -23,18 +23,16 @@ sudo apt install python3.11 python3.11-venv
 sudo apt install python3.12 python3.12-venv
 python3.11 -V && python3.12 -V
 ```
-### Vscode
-```
-sudo apt install apt-transport-https && \
-sudo snap install code
-```
-[Yandex](https://browser.yandex.ru)
 --------------------------------------------------------------------
-[Warp-terminal](https://www.warp.dev)
+##### [Vscode](https://code.visualstudio.com/)
 --------------------------------------------------------------------
-[Poetry](https://python-poetry.org/docs/)
+##### [Yandex](https://browser.yandex.ru)
 --------------------------------------------------------------------
-[Docker](https://docs.docker.com/desktop/install/ubuntu/#install-docker-desktop)
+##### [Warp-terminal](https://www.warp.dev)
+--------------------------------------------------------------------
+##### [Poetry](https://python-poetry.org/docs/)
+--------------------------------------------------------------------
+##### [Docker](https://docs.docker.com/desktop/install/ubuntu/#install-docker-desktop)
 --------------------------------------------------------------------
 
 
