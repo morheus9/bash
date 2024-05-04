@@ -19,8 +19,6 @@ sudo apt install git \
 --------------------------------------------------------------------
 ##### [Vscode](https://code.visualstudio.com/)
 --------------------------------------------------------------------
-##### [Yandex](https://browser.yandex.ru)
---------------------------------------------------------------------
 ##### [Warp-terminal](https://www.warp.dev)
 --------------------------------------------------------------------
 ##### [Docker](https://docs.docker.com/desktop/install/ubuntu/#install-docker-desktop)
