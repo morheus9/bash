@@ -25,7 +25,7 @@ sudo apt install git -y
 gpg --generate-key
 pass init YOURKEY
 ```
-##### if doesnt start docker desktop on ubuntu 24
+if doesnt start docker desktop on ubuntu 24
 ```
 sudo sysctl -w kernel.apparmor_restrict_unprivileged_userns=0
 systemctl --user restart docker-desktop
