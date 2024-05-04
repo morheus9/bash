@@ -65,8 +65,7 @@ pass init YOURKEY
 ```
 ###### if doesnt start docker desktop on ubuntu 24
 ```
-sudo nano /etc/sysctl.conf
-kernel.apparmor_restrict_unprivileged_userns=0
+sudo echo "kernel.apparmor_restrict_unprivileged_userns=0" >> /etc/sysctl.conf
 ```
 
 
