@@ -1,6 +1,7 @@
 ##### Update
 ```
-alias upg="sudo apt update && sudo apt upgrade -y"
+sudo echo 'alias upg="sudo apt update && sudo apt upgrade -y"' >> ~/.bashrc
+source ~/.bashrc
 upg
 ```
 --------------------------------------------------------------------
