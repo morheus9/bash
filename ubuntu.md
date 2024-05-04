@@ -3,7 +3,7 @@
 sudo apt update && sudo apt upgrade -y
 ```
 --------------------------------------------------------------------
-##### Kodecs+Gcc+Nvidia
+##### Kodecs+Gcc
 ```
 sudo apt install ubuntu-restricted-extras libavcodec-extra \
 && sudo apt -y install build-essential -y
