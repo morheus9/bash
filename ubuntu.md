@@ -21,6 +21,15 @@ sudo apt install git -y
 ##### [Warp-terminal](https://www.warp.dev)
 --------------------------------------------------------------------
 ##### [Docker](https://docs.docker.com/desktop/install/ubuntu/#install-docker-desktop)
+```
+gpg --generate-key
+pass init YOURKEY
+```
+##### if doesnt start docker desktop on ubuntu 24
+```
+sudo sysctl -w kernel.apparmor_restrict_unprivileged_userns=0
+systemctl --user restart docker-desktop
+```
 --------------------------------------------------------------------
 ##### [Poetry](https://python-poetry.org/docs/)
 --------------------------------------------------------------------
