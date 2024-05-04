@@ -1,17 +1,17 @@
 ##### Update
 ```
-sudo apt update && sudo apt upgrade
+sudo apt update && sudo apt upgrade -y
 ```
 --------------------------------------------------------------------
 ##### Kodecs+Gcc+Nvidia
 ```
-sudo apt install ubuntu-restricted-extras libavcodec-extra
-sudo apt -y install build-essential
+sudo apt install ubuntu-restricted-extras libavcodec-extra \\
+&& sudo apt -y install build-essential -y
 ```
 --------------------------------------------------------------------
 ##### Git
 ```
-sudo apt install git
+sudo apt install git -y
 ```
 --------------------------------------------------------------------
 ##### [Vscode](https://code.visualstudio.com/)
@@ -24,18 +24,19 @@ sudo apt install git
 --------------------------------------------------------------------
 ##### [Poetry](https://python-poetry.org/docs/)
 --------------------------------------------------------------------
-##### Python
+##### Go
+```
+sudo snap install go -y
+```
+--------------------------------------------------------------------
+##### [Python](https://github.com/morheus9/scripts_py)
 ```
 sudo add-apt-repository ppa:deadsnakes/ppa
 sudo apt update
-sudo apt install python3.11 python3.11-venv
 sudo apt install python3.12 python3.12-venv
-python3.11 -V && python3.12 -V
+python3.12 -V
 ```
-##### Go
-```
-snap install go 
-```
+
 
 
 
