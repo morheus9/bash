@@ -21,17 +21,6 @@ sudo apt install git \
 --------------------------------------------------------------------
 ##### [Warp-terminal](https://www.warp.dev)
 --------------------------------------------------------------------
-##### [Docker](https://docs.docker.com/desktop/install/ubuntu/#install-docker-desktop)
-```
-gpg --generate-key
-pass init YOURKEY
-```
-###### if doesnt start docker desktop on ubuntu 24
-```
-sudo sysctl -w kernel.apparmor_restrict_unprivileged_userns=0
-systemctl --user restart docker-desktop
-```
---------------------------------------------------------------------
 ##### Go
 ```
 sudo snap install go -y
@@ -60,7 +49,25 @@ ssh-copy-id -i ~/.ssh/id_ed25519.pub -f pi@192.168.1.104
 ssh-copy-id -i ~/.ssh/id_ed25519.pub -f pi@192.168.1.105
 ```
 --------------------------------------------------------------------
-
+##### [Podman-desktop](https://podman-desktop.io/)
+```
+sudo apt install flatpak \
+&& sudo apt-get -y install podman \
+&& sudo apt install gnome-software-plugin-flatpak \
+&& flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo \
+&& flatpak install flathub io.podman_desktop.PodmanDesktop
+```
+--------------------------------------------------------------------
+##### [Docker](https://docs.docker.com/desktop/install/ubuntu/#install-docker-desktop)
+```
+gpg --generate-key
+pass init YOURKEY
+```
+###### if doesnt start docker desktop on ubuntu 24
+```
+sudo nano /etc/sysctl.conf
+kernel.apparmor_restrict_unprivileged_userns=0
+```
 
 
 
