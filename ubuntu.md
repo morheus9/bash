@@ -1,6 +1,7 @@
 ##### Update
 ```
-sudo apt update && sudo apt upgrade -y
+alias upg="sudo apt update && sudo apt upgrade -y"
+upg
 ```
 --------------------------------------------------------------------
 ##### Kodecs+Gcc
@@ -33,12 +34,10 @@ sudo add-apt-repository ppa:deadsnakes/ppa
 sudo apt update
 sudo apt install python3.12 python3.12-venv
 ```
---------------------------------------------------------------------
 ##### [UV for python](https://astral.sh/blog/uv)
 ```
 curl -LsSf https://astral.sh/uv/install.sh | sh
 ```
---------------------------------------------------------------------
 ##### [Poetry](https://python-poetry.org/docs/)
 --------------------------------------------------------------------
 ##### SSH
