@@ -9,9 +9,12 @@ sudo apt install ubuntu-restricted-extras libavcodec-extra \
 && sudo apt -y install build-essential -y
 ```
 --------------------------------------------------------------------
-##### Git
+##### Git, transmission, timeshift and virtualbox
 ```
-sudo apt install git -y
+sudo apt install git \
+&& transmission \
+&& timeshift \
+&& virtualbox -y
 ```
 --------------------------------------------------------------------
 ##### [Vscode](https://code.visualstudio.com/)
@@ -31,8 +34,6 @@ sudo sysctl -w kernel.apparmor_restrict_unprivileged_userns=0
 systemctl --user restart docker-desktop
 ```
 --------------------------------------------------------------------
-##### [Poetry](https://python-poetry.org/docs/)
---------------------------------------------------------------------
 ##### Go
 ```
 sudo snap install go -y
@@ -51,10 +52,7 @@ sudo apt install python3.12 python3.12-venv
 curl -LsSf https://astral.sh/uv/install.sh | sh
 ```
 --------------------------------------------------------------------
-##### Transmission and timeshift
-```
-sudo apt install transmission timeshift -y
-```
+##### [Poetry](https://python-poetry.org/docs/)
 
 
 ##### Ansible + molecule + pip
