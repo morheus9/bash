@@ -7,21 +7,11 @@ sudo apt update && sudo apt upgrade
 ```
 sudo apt install ubuntu-restricted-extras libavcodec-extra
 sudo apt -y install build-essential
-sudo ubuntu-drivers autoinstall
 ```
 --------------------------------------------------------------------
 ##### Git
 ```
 sudo apt install git
-```
---------------------------------------------------------------------
-##### Python
-```
-sudo add-apt-repository ppa:deadsnakes/ppa
-sudo apt update
-sudo apt install python3.11 python3.11-venv
-sudo apt install python3.12 python3.12-venv
-python3.11 -V && python3.12 -V
 ```
 --------------------------------------------------------------------
 ##### [Vscode](https://code.visualstudio.com/)
@@ -34,6 +24,16 @@ python3.11 -V && python3.12 -V
 --------------------------------------------------------------------
 ##### [Poetry](https://python-poetry.org/docs/)
 --------------------------------------------------------------------
+##### Python
+```
+sudo add-apt-repository ppa:deadsnakes/ppa
+sudo apt update
+sudo apt install python3.11 python3.11-venv
+sudo apt install python3.12 python3.12-venv
+python3.11 -V && python3.12 -V
+```
+##### Python
+
 
 
 ##### Ansible + molecule + pip
