@@ -49,15 +49,6 @@ ssh-copy-id -i ~/.ssh/id_ed25519.pub -f pi@192.168.1.104
 ssh-copy-id -i ~/.ssh/id_ed25519.pub -f pi@192.168.1.105
 ```
 --------------------------------------------------------------------
-##### [Podman-desktop](https://podman-desktop.io/)
-```
-sudo apt install flatpak \
-&& sudo apt-get -y install podman \
-&& sudo apt install gnome-software-plugin-flatpak \
-&& flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo \
-&& flatpak install flathub io.podman_desktop.PodmanDesktop
-```
---------------------------------------------------------------------
 ##### [Docker](https://docs.docker.com/desktop/install/ubuntu/#install-docker-desktop)
 ```
 gpg --generate-key
@@ -67,7 +58,7 @@ pass init YOURKEY
 ```
 sudo echo "kernel.apparmor_restrict_unprivileged_userns=0" >> /etc/sysctl.conf
 ```
-
+--------------------------------------------------------------------
 
 
 ##### Ansible + molecule + pip
