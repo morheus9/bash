@@ -42,9 +42,9 @@ sudo dnf install gstreamer1-plugins-{bad-\*,good-\*,base} gstreamer1-plugin-open
 && sudo dnf install make automake gcc gcc-c++ kernel-devel -y
 ```
 --------------------------------------------------------------------
-##### Git
+##### Git, timeshift, transmission
 ```
-sudo dnf install git-all -y
+sudo dnf install git-all timeshift transmission -y
 ```
 --------------------------------------------------------------------
 ##### Vscode
@@ -61,16 +61,6 @@ sudo dnf install gnome-tweaks gnome-shell-extension-dash-to-dock gnome-extension
 search app "Extensions" and enable dock
 ```
 --------------------------------------------------------------------
-##### Transmission
-```
-sudo dnf install transmission -y
-```
---------------------------------------------------------------------
-##### Timeshift
-```
-sudo dnf install timeshift -y
-```
---------------------------------------------------------------------
 ##### [Go](https://go.dev/doc/install)
 ```
 sudo dnf install golang -y
@@ -81,7 +71,6 @@ curl -LsSf https://astral.sh/uv/install.sh | sh
 ```
 --------------------------------------------------------------------
 ##### [Docker](https://docs.docker.com/desktop/install/fedora)
---------------------------------------------------------------------
 ```
 gpg --generate-key
 pass init <your_generated_gpg-id_public_key>
