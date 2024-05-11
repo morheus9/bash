@@ -69,7 +69,7 @@ curl -LsSf https://astral.sh/uv/install.sh | sh
 ##### [Docker](https://docs.docker.com/desktop/install/fedora)
 ```
 gpg --generate-key
-pass init <your_generated_gpg-id_public_key>
+pass init YOURKEY
 ```
 --------------------------------------------------------------------
 ##### [Warp-terminal](https://www.warp.dev)
