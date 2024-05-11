@@ -43,13 +43,13 @@ keepcache=True
 EOF
 ```
 --------------------------------------------------------------------
-##### Kodecs + Gcc + timeshift, transmission
+##### Kodecs + Gcc + timeshift, transmission, VirtualBox
 ```
 sudo dnf install gstreamer1-plugins-{bad-\*,good-\*,base} gstreamer1-plugin-openh264 gstreamer1-libav --exclude=gstreamer1-plugins-bad-free-devel -y \
 && sudo dnf install lame\* --exclude=lame-devel -y \
 && sudo dnf group upgrade --with-optional Multimedia -y \
 && sudo dnf install make automake gcc gcc-c++ kernel-devel -y \
-&& sudo dnf install timeshift transmission -y
+&& sudo dnf install timeshift transmission VirtualBox -y
 ```
 --------------------------------------------------------------------
 ##### Vscode
@@ -82,8 +82,6 @@ pass init YOURKEY
 ```
 --------------------------------------------------------------------
 ##### [Warp-terminal](https://www.warp.dev)
---------------------------------------------------------------------
-##### [Virtualbox](https://www.virtualbox.org/wiki/Downloads)
 --------------------------------------------------------------------
 
 
