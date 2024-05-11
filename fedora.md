@@ -26,12 +26,12 @@ btrfs   subvol=home,compress=zstd:1,defaults,noatime,discard=async 0 0
 --------------------------------------------------------------------
 ##### Doing dnf faster:
 ```
-sudo gnome-text-editor /etc/dnf/dnf.conf
-
+sudo cat >> /etc/dnf/dnf.conf << EOF
 fastestmirror=True
 max_parallel_downloads=10
 defaultyes=True
 keepcache=True
+EOF
 ```
 --------------------------------------------------------------------
 ##### Kodecs + Gcc
