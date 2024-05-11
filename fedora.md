@@ -49,7 +49,7 @@ sudo dnf install gstreamer1-plugins-{bad-\*,good-\*,base} gstreamer1-plugin-open
 && sudo dnf install lame\* --exclude=lame-devel -y \
 && sudo dnf group upgrade --with-optional Multimedia -y \
 && sudo dnf install make automake gcc gcc-c++ kernel-devel -y \
-&& sudo dnf install timeshift transmission kernel-devel-$(uname -r) akmod-VirtualBox -y
+&& sudo dnf install timeshift transmission VirtualBox kernel-devel-$(uname -r) akmod-VirtualBox -y
 
 ```
 --------------------------------------------------------------------
