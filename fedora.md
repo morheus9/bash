@@ -2,7 +2,7 @@
 ```
 sudo dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm -y \
 && sudo dnf install https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm -y \
-&& flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo -y
+&& flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 ```
 --------------------------------------------------------------------
 ##### Update
@@ -34,17 +34,13 @@ keepcache=True
 EOF
 ```
 --------------------------------------------------------------------
-##### Kodecs + Gcc
+##### Kodecs + Gcc + timeshift, transmission
 ```
 sudo dnf install gstreamer1-plugins-{bad-\*,good-\*,base} gstreamer1-plugin-openh264 gstreamer1-libav --exclude=gstreamer1-plugins-bad-free-devel -y \
 && sudo dnf install lame\* --exclude=lame-devel -y \
 && sudo dnf group upgrade --with-optional Multimedia -y \
-&& sudo dnf install make automake gcc gcc-c++ kernel-devel -y
-```
---------------------------------------------------------------------
-##### Git, timeshift, transmission
-```
-sudo dnf install git-all timeshift transmission -y
+&& sudo dnf install make automake gcc gcc-c++ kernel-devel -y \
+&& sudo dnf install timeshift transmission -y
 ```
 --------------------------------------------------------------------
 ##### Vscode
