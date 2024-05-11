@@ -7,8 +7,9 @@ sudo dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-rele
 --------------------------------------------------------------------
 ##### Update
 ```
-sudo dnf upgrade -y --refresh \
-&& sudo dnf groupupdate core
+sudo echo 'alias upg="sudo dnf upgrade -y --refresh && sudo dnf autoremove -y"' >> ~/.bashrc
+source ~/.bashrc
+upg
 ```
 --------------------------------------------------------------------
 ##### Firmware updates:
