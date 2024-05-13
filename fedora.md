@@ -64,8 +64,8 @@ sudo sh -c 'echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.m
 ##### Gnome dock and Gnome-tweaks
 ```
 sudo dnf install gnome-tweaks gnome-shell-extension-dash-to-dock gnome-extensions-app -y
-search app "Extensions" and enable dock
 ```
+search app "Extensions" and enable dock
 --------------------------------------------------------------------
 ##### [Go](https://go.dev/doc/install)
 ```
