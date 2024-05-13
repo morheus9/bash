@@ -1,25 +1,25 @@
-##### To add 'Fluthub', 'RPM Fusion repositories' and 'non-free RPM Fusion repositories' use:
+#### To add 'Fluthub', 'RPM Fusion repositories' and 'non-free RPM Fusion repositories' use:
 ```
 sudo dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm -y \
 && sudo dnf install https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm -y \
 && flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 ```
 --------------------------------------------------------------------
-##### Update
+#### Update
 ```
 sudo echo 'alias upg="sudo dnf upgrade -y --refresh && sudo dnf autoremove -y"' >> ~/.bashrc \
 && source ~/.bashrc \
 && upg
 ```
 --------------------------------------------------------------------
-##### Firmware updates:
+#### Firmware updates:
 ```
 sudo fwupdmgr refresh --force \
 && sudo fwupdmgr get-updates \
 && sudo fwupdmgr update
 ```
 --------------------------------------------------------------------
-##### SSH
+#### SSH
 ```
 ssh-keygen -t ed25519
 chmod 700 ~/.ssh/id_ed25519
@@ -27,13 +27,13 @@ ssh-copy-id -i ~/.ssh/id_ed25519.pub -f pi@192.168.1.104
 ssh-copy-id -i ~/.ssh/id_ed25519.pub -f pi@192.168.1.105
 ```
 --------------------------------------------------------------------
-##### If you have SSD add to fstab parameters after "compress=zstd:1" for sections: /, /home, /var/log:
+#### If you have SSD add to fstab parameters after "compress=zstd:1" for sections: /, /home, /var/log:
 ```
 sudo gnome-text-editor /etc/fstab
 btrfs   subvol=home,compress=zstd:1,defaults,noatime,discard=async 0 0
 ```
 --------------------------------------------------------------------
-##### Doing dnf faster:
+#### Doing dnf faster:
 ```
 sudo cat >> /etc/dnf/dnf.conf << EOF
 fastestmirror=True
@@ -43,7 +43,7 @@ keepcache=True
 EOF
 ```
 --------------------------------------------------------------------
-##### Kodecs + Gcc + timeshift, transmission, VirtualBox
+#### Kodecs + Gcc + timeshift, transmission, VirtualBox
 ```
 sudo dnf install gstreamer1-plugins-{bad-\*,good-\*,base} gstreamer1-plugin-openh264 gstreamer1-libav --exclude=gstreamer1-plugins-bad-free-devel -y \
 && sudo dnf install lame\* --exclude=lame-devel -y \
@@ -53,7 +53,7 @@ sudo dnf install gstreamer1-plugins-{bad-\*,good-\*,base} gstreamer1-plugin-open
 
 ```
 --------------------------------------------------------------------
-##### Vscode
+#### Vscode
 ```
 sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
 sudo sh -c 'echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" > /etc/yum.repos.d/vscode.repo' \
@@ -61,34 +61,34 @@ sudo sh -c 'echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.m
 && sudo dnf install code -y
 ```
 --------------------------------------------------------------------
-##### Gnome dock and Gnome-tweaks
+#### Gnome dock and Gnome-tweaks
 ```
 sudo dnf install gnome-tweaks gnome-shell-extension-dash-to-dock gnome-extensions-app -y
 ```
-search app "Extensions" and enable dock
+##### search app "Extensions" and enable dock
 --------------------------------------------------------------------
-##### [Go](https://go.dev/doc/install)
+#### [Go](https://go.dev/doc/install)
 ```
 sudo dnf install golang -y
 ```
-##### [UV for python](https://astral.sh/blog/uv)
+#### [UV for python](https://astral.sh/blog/uv)
 ```
 curl -LsSf https://astral.sh/uv/install.sh | sh
 ```
 --------------------------------------------------------------------
-##### [Docker](https://docs.docker.com/desktop/install/fedora)
+#### [Docker](https://docs.docker.com/desktop/install/fedora)
 ```
 gpg --generate-key
 pass init YOURKEY
 ```
 --------------------------------------------------------------------
-##### [Warp-terminal](https://www.warp.dev)
+#### [Warp-terminal](https://www.warp.dev)
 --------------------------------------------------------------------
 
 
 
 
-##### Ansible + molecule + pip!!!!!!!!!!!!!!!!!!!!!!!!!!
+#### Ansible + molecule + pip!!!!!!!!!!!!!!!!!!!!!!!!!!
 ```
 sudo dnf install -y ansible
 pip3 install "ansible-lint"
@@ -102,5 +102,5 @@ ansible --version
 molecule --version
 ```
 --------------------------------------------------------------------
-##### [Plafon](https://plafon.gitbook.io/fedora-zero)
+#### [Plafon](https://plafon.gitbook.io/fedora-zero)
 --------------------------------------------------------------------
