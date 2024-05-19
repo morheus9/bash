@@ -53,7 +53,7 @@ curl -LsSf https://astral.sh/uv/install.sh | sh
 sudo snap install go -y
 sudo add-apt-repository ppa:deadsnakes/ppa
 sudo apt update
-sudo apt install python3.12 python3.12-venv python3-pip
+sudo apt install python3.12 python3.12-venv python3-pip python-is-python3
 --------------------------------------------------------------------
 pip3 install "ansible-lint"
 python3.11 -m pip install ansible molecule
