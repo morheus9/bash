@@ -20,5 +20,3 @@ curl -LsSf https://astral.sh/uv/install.sh | sh
 # SSH
 ssh-keygen -t ed25519
 chmod 700 ~/.ssh/id_ed25519
-ssh-copy-id -i ~/.ssh/id_ed25519.pub -f pi@192.168.1.104
-ssh-copy-id -i ~/.ssh/id_ed25519.pub -f pi@192.168.1.105
