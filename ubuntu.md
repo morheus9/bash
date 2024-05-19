@@ -39,7 +39,7 @@ sudo echo "kernel.apparmor_restrict_unprivileged_userns=0" >> /etc/sysctl.conf
 --------------------------------------------------------------------
 ##### [Warp-terminal](https://www.warp.dev)
 --------------------------------------------------------------------
-##### [Poetry](https://python-poetry.org/docs/)
+##### [Poetry](https://python-poetry.org/docs/#installing-with-the-official-installer)
 --------------------------------------------------------------------
 ##### [UV for python](https://astral.sh/blog/uv)
 ```
