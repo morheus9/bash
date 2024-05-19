@@ -19,18 +19,7 @@ sudo apt install git \
 && virtualbox -y
 ```
 --------------------------------------------------------------------
-##### Go
-```
-sudo snap install go -y
-```
---------------------------------------------------------------------
-##### [Python](https://github.com/morheus9/scripts_py)
-```
-python3.12 -V
-sudo add-apt-repository ppa:deadsnakes/ppa
-sudo apt update
-sudo apt install python3.12 python3.12-venv
-```
+
 --------------------------------------------------------------------
 ##### SSH
 ```
@@ -65,16 +54,18 @@ curl -LsSf https://astral.sh/uv/install.sh | sh
 --------------------------------------------------------------------
 
 
-##### Ansible + molecule + pip
+##### Ansible + molecule + pip + python + go
 ```
-sudo apt install python3-pip
+sudo snap install go -y
+sudo add-apt-repository ppa:deadsnakes/ppa
+sudo apt update
+sudo apt install python3.12 python3.12-venv python3-pip
+--------------------------------------------------------------------
 pip3 install "ansible-lint"
 python3.11 -m pip install ansible molecule
 python3 -m pip install --upgrade --user ansible
 python3.11 -m pip uninstall ansible molecule
-```
 --------------------------------------------------------------------
-```
 ansible --version
 molecule --version
 python3.12 -V
