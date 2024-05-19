@@ -11,8 +11,6 @@ sudo apt install git \
 && transmission \
 && timeshift \
 && virtualbox -y
-# Go
-sudo snap install go -y
 # Python
 sudo add-apt-repository ppa:deadsnakes/ppa && sudo apt update
 sudo apt install python3.12 python3.12-venv
