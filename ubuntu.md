@@ -19,10 +19,6 @@ sudo apt install git \
 && virtualbox -y
 ```
 --------------------------------------------------------------------
-##### [Vscode](https://code.visualstudio.com/)
---------------------------------------------------------------------
-##### [Warp-terminal](https://www.warp.dev)
---------------------------------------------------------------------
 ##### Go
 ```
 sudo snap install go -y
@@ -35,11 +31,6 @@ sudo add-apt-repository ppa:deadsnakes/ppa
 sudo apt update
 sudo apt install python3.12 python3.12-venv
 ```
-##### [UV for python](https://astral.sh/blog/uv)
-```
-curl -LsSf https://astral.sh/uv/install.sh | sh
-```
-##### [Poetry](https://python-poetry.org/docs/)
 --------------------------------------------------------------------
 ##### SSH
 ```
@@ -57,6 +48,17 @@ pass init YOURKEY
 ###### if doesnt start docker desktop on ubuntu 24
 ```
 sudo echo "kernel.apparmor_restrict_unprivileged_userns=0" >> /etc/sysctl.conf
+```
+--------------------------------------------------------------------
+##### [Vscode](https://code.visualstudio.com/)
+--------------------------------------------------------------------
+##### [Warp-terminal](https://www.warp.dev)
+--------------------------------------------------------------------
+##### [Poetry](https://python-poetry.org/docs/)
+--------------------------------------------------------------------
+##### [UV for python](https://astral.sh/blog/uv)
+```
+curl -LsSf https://astral.sh/uv/install.sh | sh
 ```
 --------------------------------------------------------------------
 
