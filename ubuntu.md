@@ -7,19 +7,13 @@ upg
 --------------------------------------------------------------------
 ##### Kodecs+Gcc
 ```
-sudo apt install ubuntu-restricted-extras libavcodec-extra \
-&& sudo apt -y install build-essential -y
+sudo apt install ubuntu-restricted-extras libavcodec-extra build-essential -y
 ```
 --------------------------------------------------------------------
 ##### Git, transmission, timeshift and virtualbox
 ```
-sudo apt install git \
-&& transmission \
-&& timeshift \
-&& virtualbox -y
+sudo apt install git transmission timeshift virtualbox -y
 ```
---------------------------------------------------------------------
-
 --------------------------------------------------------------------
 ##### SSH
 ```
