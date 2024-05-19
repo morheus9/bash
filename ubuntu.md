@@ -50,6 +50,8 @@ pass init YOURKEY
 sudo echo "kernel.apparmor_restrict_unprivileged_userns=0" >> /etc/sysctl.conf
 ```
 --------------------------------------------------------------------
+##### [Yandex](https://browser.yandex.ru/)
+--------------------------------------------------------------------
 ##### [Vscode](https://code.visualstudio.com/)
 --------------------------------------------------------------------
 ##### [Warp-terminal](https://www.warp.dev)
