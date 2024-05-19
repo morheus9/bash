@@ -1,6 +1,6 @@
 ##### Update
 ```
-sudo echo 'alias upg="sudo apt update && sudo apt upgrade -y"' >> ~/.bashrc
+sudo echo 'alias upg="sudo snap refresh && sudo apt update && sudo apt upgrade -y"' >> ~/.bashrc
 source ~/.bashrc
 upg
 ```
