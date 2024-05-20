@@ -10,9 +10,9 @@ upg
 sudo apt install ubuntu-restricted-extras libavcodec-extra build-essential -y
 ```
 --------------------------------------------------------------------
-##### Git, transmission, timeshift and virtualbox
+##### Git, transmission, timeshift, vlc and virtualbox
 ```
-sudo apt install git transmission timeshift virtualbox -y
+sudo apt install git transmission timeshift vlc virtualbox -y
 ```
 --------------------------------------------------------------------
 ##### SSH
