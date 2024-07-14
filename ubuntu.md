@@ -48,9 +48,10 @@ curl -LsSf https://astral.sh/uv/install.sh | sh
 --------------------------------------------------------------------
 
 
-##### Ansible + molecule + pip + python + go
+##### Ansible + molecule + pip + python + rust
 ```
-sudo snap install go -y
+curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf | sh
+sudo snap install golang -y
 sudo add-apt-repository ppa:deadsnakes/ppa
 sudo apt update
 sudo apt install python3.12 python3.12-venv python3-pip python-is-python3
