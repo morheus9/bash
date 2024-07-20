@@ -33,20 +33,18 @@ pass init YOURKEY
 sudo echo "kernel.apparmor_restrict_unprivileged_userns=0" >> /etc/sysctl.conf
 ```
 --------------------------------------------------------------------
-##### [Yandex](https://browser.yandex.ru/)
+##### [Yandex](https://browser.yandex.ru)
 --------------------------------------------------------------------
-##### [Vscode](https://code.visualstudio.com/)
+##### [Vscode](https://code.visualstudio.com)
 --------------------------------------------------------------------
 ##### [Warp-terminal](https://www.warp.dev)
 --------------------------------------------------------------------
 ##### [Poetry](https://python-poetry.org/docs/#installing-with-the-official-installer)
 --------------------------------------------------------------------
-##### [UV for python](https://astral.sh/blog/uv)
-```
-curl -LsSf https://astral.sh/uv/install.sh | sh
-```
+##### [Pixi](https://rye.astral.shhttps://pixi.sh/latest)
 --------------------------------------------------------------------
-
+##### [Rye](https://rye.astral.sh)
+--------------------------------------------------------------------
 
 ##### Ansible + molecule + pip + python + rust
 ```
