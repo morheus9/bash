@@ -20,7 +20,6 @@ sudo apt install git transmission timeshift vlc virtualbox -y
 ssh-keygen -t ed25519
 chmod 700 ~/.ssh/id_ed25519
 ssh-copy-id -i ~/.ssh/id_ed25519.pub -f pi@192.168.1.104
-ssh-copy-id -i ~/.ssh/id_ed25519.pub -f pi@192.168.1.105
 ```
 --------------------------------------------------------------------
 ##### [Docker](https://docs.docker.com/desktop/install/ubuntu/#install-docker-desktop)
@@ -32,8 +31,6 @@ pass init YOURKEY
 ```
 sudo echo "kernel.apparmor_restrict_unprivileged_userns=0" >> /etc/sysctl.conf
 ```
---------------------------------------------------------------------
-##### [Yandex](https://browser.yandex.ru)
 --------------------------------------------------------------------
 ##### [Vscode](https://code.visualstudio.com)
 --------------------------------------------------------------------
