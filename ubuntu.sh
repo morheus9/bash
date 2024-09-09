@@ -8,5 +8,3 @@ sudo apt install git transmission timeshift virtualbox -y
 # SSH
 ssh-keygen -t ed25519
 chmod 700 ~/.ssh/id_ed25519
-# uv
-curl -LsSf https://astral.sh/uv/install.sh | sh
