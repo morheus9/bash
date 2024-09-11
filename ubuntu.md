@@ -38,9 +38,7 @@ sudo echo "kernel.apparmor_restrict_unprivileged_userns=0" >> /etc/sysctl.conf
 --------------------------------------------------------------------
 ##### [Poetry](https://python-poetry.org/docs/#installing-with-the-official-installer)
 --------------------------------------------------------------------
-##### [Pixi](https://rye.astral.shhttps://pixi.sh/latest)
---------------------------------------------------------------------
-##### [Rye](https://rye.astral.sh)
+##### [Pixi](https://pixi.sh/latest)
 --------------------------------------------------------------------
 
 ##### Ansible + molecule + pip + python + rust
