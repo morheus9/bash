@@ -34,13 +34,6 @@ curl -sSL https://install.python-poetry.org | python3 -
 rm -f ./*.deb
 ```
 --------------------------------------------------------------------
-##### SSH
-```
-ssh-keygen -t ed25519
-chmod 700 ~/.ssh/id_ed25519
-ssh-copy-id -i ~/.ssh/id_ed25519.pub -f pi@192.168.1.104
-```
---------------------------------------------------------------------
 ##### [Docker](https://docs.docker.com/desktop/install/ubuntu/#install-docker-desktop)
 ```
 gpg --generate-key
@@ -50,14 +43,6 @@ pass init YOURKEY
 ```
 sudo echo "kernel.apparmor_restrict_unprivileged_userns=0" >> /etc/sysctl.conf
 ```
---------------------------------------------------------------------
-##### [Vscode](https://code.visualstudio.com)
---------------------------------------------------------------------
-##### [Warp-terminal](https://www.warp.dev)
---------------------------------------------------------------------
-##### [Poetry](https://python-poetry.org/docs/#installing-with-the-official-installer)
---------------------------------------------------------------------
-##### [Pixi](https://pixi.sh/latest)
 --------------------------------------------------------------------
 
 ##### Ansible + molecule + pip + python + rust
@@ -78,4 +63,19 @@ molecule --version
 python3.12 -V
 sudo echo 'alias upg="sudo apt update && sudo apt upgrade -y"' >> ~/.bashrc
 ```
+--------------------------------------------------------------------
+##### SSH
+```
+ssh-keygen -t ed25519
+chmod 700 ~/.ssh/id_ed25519
+ssh-copy-id -i ~/.ssh/id_ed25519.pub -f pi@192.168.1.104
+```
+--------------------------------------------------------------------
+##### [Vscode](https://code.visualstudio.com)
+--------------------------------------------------------------------
+##### [Warp-terminal](https://www.warp.dev)
+--------------------------------------------------------------------
+##### [Poetry](https://python-poetry.org/docs/#installing-with-the-official-installer)
+--------------------------------------------------------------------
+##### [Pixi](https://pixi.sh/latest)
 ____________________________________________________________________
