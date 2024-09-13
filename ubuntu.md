@@ -10,6 +10,7 @@ upg
 - vscode
 - docker desktop
 - poetry
+- pycharm-community
 ```
 wget -c -O code.deb "https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64"
 wget -c -O docker_desktop.deb "https://desktop.docker.com/linux/main/amd64/docker-desktop-amd64.deb?utm_source=docker&utm_medium=webreferral&utm_campaign=docs-driven-download-linux-amd64"
@@ -30,6 +31,7 @@ echo \
 
 sudo apt update
 sudo apt install ubuntu-restricted-extras libavcodec-extra build-essential git transmission timeshift vlc virtualbox warp-terminal ./*.deb -y
+sudo snap install pycharm-community --classic
 curl -sSL https://install.python-poetry.org | python3 -
 rm -f ./*.deb
 ```
