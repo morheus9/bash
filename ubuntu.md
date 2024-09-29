@@ -7,13 +7,14 @@ upg
 --------------------------------------------------------------------
 - Kodecs+Gcc
 - Git, transmission, timeshift, vlc, virtualbox warp-terminal
-- vscode
-- docker desktop
-- poetry
-- pycharm-community
+- Vscode
+- Docker desktop
+- Poetry
+- Yandex browser
 ```
 wget -c -O code.deb "https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64"
 wget -c -O docker_desktop.deb "https://desktop.docker.com/linux/main/amd64/docker-desktop-amd64.deb?utm_source=docker&utm_medium=webreferral&utm_campaign=docs-driven-download-linux-amd64"
+wget -c -O yandex.deb "https://browser.yandex.ru/download?package=deb&x64=1&os=linux&darktheme=1&banerid=6302000000&portal_testids=1114347%2F-1&signature=BvCgo%2FICb3xElms%2FKms%2F8mDe%2B6%2B4t5nT85wU%2BLPg5RX7q%2FN1k2Wr6kAVMgikE18me3mSyZbxtFMUn29N7GhN1Q%3D%3D"
 
 wget -qO- https://releases.warp.dev/linux/keys/warp.asc | gpg --dearmor > warpdotdev.gpg
 sudo install -D -o root -g root -m 644 warpdotdev.gpg /etc/apt/keyrings/warpdotdev.gpg
@@ -31,7 +32,6 @@ echo \
 
 sudo apt update
 sudo apt install ubuntu-restricted-extras libavcodec-extra build-essential git transmission timeshift vlc virtualbox warp-terminal ./*.deb -y
-sudo snap install pycharm-community --classic
 curl -sSL https://install.python-poetry.org | python3 -
 rm -f ./*.deb
 ```
