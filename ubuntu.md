@@ -47,10 +47,10 @@ sudo echo "kernel.apparmor_restrict_unprivileged_userns=0" >> /etc/sysctl.conf
 ```
 --------------------------------------------------------------------
 
-##### Ansible + molecule + pip + python + rust
+##### Ansible + molecule + pip + python + go + rust
 ```
+sudo snap install go
 curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf | sh
-sudo snap install golang -y
 sudo add-apt-repository ppa:deadsnakes/ppa
 sudo apt update
 sudo apt install python3.12 python3.12-venv python3-pip python-is-python3
@@ -77,7 +77,6 @@ ssh-copy-id -i ~/.ssh/id_ed25519.pub -f pi@192.168.1.104
 --------------------------------------------------------------------
 ##### [Warp-terminal](https://www.warp.dev)
 ____________________________________________________________________
-
 
 ```
 #!/usr/bin/env python
