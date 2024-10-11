@@ -5,7 +5,7 @@ source ~/.bashrc
 upg
 ```
 --------------------------------------------------------------------
-- Kodecs+Gcc
+- Kodecs+gcc
 - Git, transmission, timeshift, vlc, virtualbox warp-terminal
 - Vscode
 - Docker desktop
