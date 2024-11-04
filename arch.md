@@ -16,6 +16,9 @@ sudo pacman -S foo
 K3s
 ```
 curl -sfL https://get.k3s.io | sh -
+mkdir -p ~/.kube
+sudo cp /etc/rancher/k3s/k3s.yaml ~/.kube/config
+sudo chown pi:pi ~/.kube/config
 ```
 Удалить пакет и зависимости
 ```
