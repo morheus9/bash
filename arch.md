@@ -13,6 +13,10 @@ rust
 ```
 sudo pacman -S foo
 ```
+K3s
+```
+curl -sfL https://get.k3s.io | sh -
+```
 Удалить пакет и зависимости
 ```
 sudo pacman -Rns foo
