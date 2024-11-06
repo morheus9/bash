@@ -8,7 +8,8 @@ yay -S \
 visual-studio-code-bin \
 yandex-browser \
 go \
-rust
+rust \
+podman-desktop
 ```
 ```
 sudo pacman -S foo
