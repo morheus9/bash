@@ -7,9 +7,9 @@ sudo pacman -S --needed git base-devel && git clone https://aur.archlinux.org/ya
 yay -S \
 visual-studio-code-bin \
 yandex-browser \
-go \
+podman-desktop \
 rust \
-podman-desktop
+go
 ```
 ```
 sudo pacman -S foo
@@ -21,36 +21,27 @@ mkdir -p ~/.kube
 sudo cp /etc/rancher/k3s/k3s.yaml ~/.kube/config
 sudo chown pi:pi ~/.kube/config
 ```
+Удалить ненужные пакеты
+```
+yay -Rn $(yay -Qdtq)
+```
 Удалить пакет и зависимости
 ```
-sudo pacman -Rns foo
 yay -Rns foo
-```
-Обновить список пакетов
-```
-sudo pacman -Sy
-yay
+sudo pacman -Rns foo
 ```
 Обновить все пакеты
 ```
+yay (Alias to yay -Syu.)
 sudo pacman -Syyu
-```
-Обновить все пакеты (+AUR)
-```
-yay -Syu
 ```
 Найти пакеты AUR
 ```
-sudo yay packagename
-```
-Найти ненужные зависимости
-```
-yay -Yc
+yay packagename
 ```
 Список из AUR:
 ```
 visual-studio-code-bin
 yandex-browser
-go
-rust
+podman-desktop
 ```
