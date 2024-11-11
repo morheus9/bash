@@ -12,7 +12,7 @@ rust \
 go
 ```
 ```
-sudo pacman -S foo
+sudo pacman -S packagename
 ```
 K3s
 ```
