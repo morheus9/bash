@@ -6,26 +6,28 @@ upg
 ```
 --------------------------------------------------------------------
 - Kodecs+gcc
-- Git, transmission, timeshift, vlc, virtualbox warp-terminal
+- Git, transmission, timeshift, vlc, virtualbox
 - Vscode
-- Poetry
 - Yandex browser
+- Poetry
+
 ```
 wget -c -O code.deb "https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64"
 wget -c -O yandex.deb "https://browser.yandex.ru/download?package=deb&x64=1&os=linux&darktheme=1&banerid=6302000000&portal_testids=1114347%2F-1&signature=BvCgo%2FICb3xElms%2FKms%2F8mDe%2B6%2B4t5nT85wU%2BLPg5RX7q%2FN1k2Wr6kAVMgikE18me3mSyZbxtFMUn29N7GhN1Q%3D%3D"
 
 sudo apt update
-sudo apt install ubuntu-restricted-extras libavcodec-extra build-essential git transmission timeshift vlc virtualbox ./*.deb -y
+sudo apt install snapd ubuntu-restricted-extras libavcodec-extra build-essential git transmission timeshift vlc virtualbox ./*.deb -y
 curl -sSL https://install.python-poetry.org | python3 -
 rm -f ./*.deb
+sudo apt autoclean
 ```
 --------------------------------------------------------------------
 ##### [Podman-Desktop](https://podman-desktop.io/docs/installation/linux-install)
 --------------------------------------------------------------------
 
-##### Ansible + molecule + pip + python + go + rust
+##### go + rust + pip + python
 ```
-sudo snap install go
+sudo snap install go --classic
 curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf | sh
 sudo add-apt-repository ppa:deadsnakes/ppa
 sudo apt update
