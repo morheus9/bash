@@ -19,7 +19,7 @@ sudo apt update
 sudo apt install curl snapd ubuntu-restricted-extras libavcodec-extra build-essential git transmission timeshift vlc virtualbox ./*.deb -y
 curl -sSL https://install.python-poetry.org | python3 -
 rm -f ./*.deb
-sudo apt autoclean
+sudo apt autoremove
 ```
 --------------------------------------------------------------------
 ##### [Podman-Desktop](https://podman-desktop.io/docs/installation/linux-install)
