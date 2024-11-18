@@ -17,7 +17,6 @@ go
 ```
 sudo pacman -S packagename
 ```
-##### [Podman-Desktop](https://podman-desktop.io/docs/installation/linux-install)
 Poetry
 ```
 curl -sSL https://install.python-poetry.org | python3 -
@@ -51,5 +50,5 @@ yay packagename
 ```
 visual-studio-code-bin
 yandex-browser
-podman-desktop
+##### [Podman-Desktop](https://podman-desktop.io/docs/installation/linux-install)
 ```
