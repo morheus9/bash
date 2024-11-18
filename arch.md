@@ -14,6 +14,11 @@ go
 ```
 sudo pacman -S packagename
 ```
+Poetry
+```
+curl -sSL https://install.python-poetry.org | python3 -
+```
+##### [Podman-Desktop](https://podman-desktop.io/docs/installation/linux-install)
 K3s
 ```
 curl -sfL https://get.k3s.io | sh -
