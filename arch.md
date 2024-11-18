@@ -39,7 +39,7 @@ sudo pacman -Rns foo
 ```
 Обновить все пакеты
 ```
-yay (Alias to yay -Syu.)
+yay (Alias to yay -Syu)
 sudo pacman -Syyu
 ```
 Найти пакеты AUR
