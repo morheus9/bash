@@ -47,9 +47,7 @@ sudo pacman -Syyu
 yay packagename
 ```
 Список из AUR:
-```
-visual-studio-code-bin
-yandex-browser
-```
-##### [Podman-Desktop](https://podman-desktop.io/docs/installation/linux-install)
+- visual-studio-code-bin
+- yandex-browser
+- [Podman-Desktop](https://podman-desktop.io/docs/installation/linux-install)
 
