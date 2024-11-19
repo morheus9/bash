@@ -1,9 +1,8 @@
-##### Update
-Добавить ключи
+##### Keys
 ```
 gpg --full-generate-key
 ```
-Alias for update
+##### Update
 ```
 sudo echo 'alias upg="sudo snap refresh && sudo apt update && sudo apt upgrade -y"' >> ~/.bashrc
 source ~/.bashrc
