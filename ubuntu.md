@@ -1,4 +1,9 @@
 ##### Update
+Добавить ключи
+```
+gpg --full-generate-key
+```
+Alias for update
 ```
 sudo echo 'alias upg="sudo snap refresh && sudo apt update && sudo apt upgrade -y"' >> ~/.bashrc
 source ~/.bashrc
@@ -10,7 +15,6 @@ upg
 - Vscode
 - Yandex browser
 - Poetry
-
 ```
 wget -c -O code.deb "https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64"
 wget -c -O yandex.deb "https://browser.yandex.ru/download?package=deb&x64=1&os=linux&darktheme=1&banerid=6302000000&portal_testids=1114347%2F-1&signature=BvCgo%2FICb3xElms%2FKms%2F8mDe%2B6%2B4t5nT85wU%2BLPg5RX7q%2FN1k2Wr6kAVMgikE18me3mSyZbxtFMUn29N7GhN1Q%3D%3D"
@@ -24,7 +28,6 @@ sudo apt autoremove
 --------------------------------------------------------------------
 ##### [Podman-Desktop](https://podman-desktop.io/docs/installation/linux-install)
 --------------------------------------------------------------------
-
 ##### go + rust + pip + python
 ```
 sudo snap install go --classic
