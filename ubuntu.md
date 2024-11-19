@@ -1,12 +1,9 @@
-##### Keys
-```
-gpg --full-generate-key
-```
-##### Update
+##### Update + Keys
 ```
 sudo echo 'alias upg="sudo snap refresh && sudo apt update && sudo apt upgrade -y"' >> ~/.bashrc
 source ~/.bashrc
 upg
+gpg --full-generate-key
 ```
 --------------------------------------------------------------------
 - Kodecs+gcc
