@@ -16,7 +16,7 @@ wget -c -O code.deb "https://code.visualstudio.com/sha/download?build=stable&os=
 wget -c -O yandex.deb "https://browser.yandex.ru/download?package=deb&x64=1&os=linux&darktheme=1&banerid=6302000000&portal_testids=1114347%2F-1&signature=BvCgo%2FICb3xElms%2FKms%2F8mDe%2B6%2B4t5nT85wU%2BLPg5RX7q%2FN1k2Wr6kAVMgikE18me3mSyZbxtFMUn29N7GhN1Q%3D%3D"
 
 sudo apt update
-sudo apt install curl snapd ubuntu-restricted-extras libavcodec-extra build-essential git transmission timeshift vlc virtualbox ./*.deb -y
+sudo apt install curl snapd ubuntu-restricted-extras libavcodec-extra build-essential git transmission timeshift vlc ./*.deb -y
 curl -sSL https://install.python-poetry.org | python3 -
 rm -f ./*.deb
 sudo apt autoremove
