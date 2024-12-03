@@ -6,8 +6,8 @@ upg
 gpg --full-generate-key
 ```
 --------------------------------------------------------------------
-- Kodecs+gcc
-- Git, transmission, timeshift, vlc, virtualbox
+- Kodecs + gcc
+- Git, transmission, timeshift, vlc
 - Vscode
 - Yandex browser
 - Poetry
@@ -37,20 +37,18 @@ sudo apt install python3.12 python3.12-venv python3-pip python-is-python3
 ```
 pip3 install "ansible-lint"
 python3.12 -m pip install ansible molecule
-python3 -m pip install --upgrade --user ansible
-python3.12 -m pip uninstall ansible molecule
+python3 -m pip install --upgrade --user ansible molecule
 --------------------------------------------------------------------
 ansible --version
 molecule --version
 python3.12 -V
-sudo echo 'alias upg="sudo apt update && sudo apt upgrade -y"' >> ~/.bashrc
 ```
 --------------------------------------------------------------------
 ##### SSH
 ```
 ssh-keygen -t ed25519
 chmod 700 ~/.ssh/id_ed25519
-ssh-copy-id -i ~/.ssh/id_ed25519.pub -f pi@192.168.1.104
+ssh-copy-id -i ~/.ssh/id_ed25519.pub -f pi@ххх.ххх.ххх.ххх
 ```
 --------------------------------------------------------------------
 ##### [Vscode](https://code.visualstudio.com)
