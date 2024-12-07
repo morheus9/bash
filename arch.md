@@ -1,7 +1,8 @@
-Установить Yay
+Обновить зеркала
 ```
 sudo pacman-mirrors -f 
 ```
+Yay + Go
 ```
 sudo pacman -S --needed git base-devel && git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si
 ```
@@ -15,8 +16,7 @@ yay -S \
 visual-studio-code-bin \
 google-chrome \
 podman-desktop \
-rust \
-go
+rust
 ```
 ```
 sudo pacman -S packagename
