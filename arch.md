@@ -13,24 +13,13 @@ gpg --full-generate-key
 ```
 yay -S \
 visual-studio-code-bin \
-yandex-browser \
+google-chrome \
 podman-desktop \
 rust \
 go
 ```
 ```
 sudo pacman -S packagename
-```
-Poetry
-```
-curl -sSL https://install.python-poetry.org | python3 -
-```
-K3s
-```
-curl -sfL https://get.k3s.io | sh -
-mkdir -p ~/.kube
-sudo cp /etc/rancher/k3s/k3s.yaml ~/.kube/config
-sudo chown pi:pi ~/.kube/config
 ```
 Удалить ненужные пакеты
 ```
@@ -52,6 +41,17 @@ yay packagename
 ```
 Список из AUR:
 - visual-studio-code-bin
-- yandex-browser
+- google-chrome
 - [Podman-Desktop](https://podman-desktop.io/docs/installation/linux-install)
 
+Poetry
+```
+curl -sSL https://install.python-poetry.org | python3 -
+```
+K3s
+```
+curl -sfL https://get.k3s.io | sh -
+mkdir -p ~/.kube
+sudo cp /etc/rancher/k3s/k3s.yaml ~/.kube/config
+sudo chown pi:pi ~/.kube/config
+```
