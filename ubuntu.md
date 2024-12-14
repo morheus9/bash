@@ -1,4 +1,4 @@
-##### Keys
+- Keys
 ```
 gpg --full-generate-key
 ```
