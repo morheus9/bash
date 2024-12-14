@@ -1,8 +1,5 @@
-##### Update + Keys
+##### Keys
 ```
-sudo echo 'alias upg="sudo snap refresh && sudo apt update && sudo apt upgrade -y"' >> ~/.bashrc
-source ~/.bashrc
-upg
 gpg --full-generate-key
 ```
 --------------------------------------------------------------------
@@ -30,7 +27,8 @@ sudo apt install python3.12 python3.12-venv python3-pip python-is-python3
 curl -sSL https://install.python-poetry.org | python3 -
 sudo apt install zsh
 chsh -s $(which zsh)
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" 
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+sudo echo 'alias upg="sudo snap refresh && sudo apt update && sudo apt upgrade -y"' >> ~/.zshrc
 ```
 --------------------------------------------------------------------
 ##### Ansible
