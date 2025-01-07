@@ -73,8 +73,8 @@ sudo dnf install golang -y
 ```
 sudo dnf install gnome-tweaks gnome-shell-extension-dash-to-dock gnome-extensions-app -y
 ```
-##### Search app "Extensions" and enable dock
-##### Config for Firefox, change to 1
+#### Search app "Extensions" and enable dock
+#### Config for Firefox, change to 1
 ```
 browser.uidensity
 ```
