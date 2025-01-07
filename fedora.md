@@ -75,12 +75,6 @@ sudo dnf install gnome-tweaks gnome-shell-extension-dash-to-dock gnome-extension
 ```
 ##### search app "Extensions" and enable dock
 --------------------------------------------------------------------
-
-
-
-
-
-
 #### [UV for python](https://astral.sh/blog/uv)
 ```
 curl -LsSf https://astral.sh/uv/install.sh | sh
