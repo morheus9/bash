@@ -61,45 +61,52 @@ sudo sh -c 'echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.m
 && sudo dnf install code -y
 ```
 --------------------------------------------------------------------
+#### [Go](https://go.dev/doc/install)
+```
+sudo dnf install golang -y
+```
+--------------------------------------------------------------------
+#### [Warp-terminal](https://www.warp.dev)
+```
+wget --inet4-only "https://app.warp.dev/get_warp?package=rpm"
+sudo dnf update
+sudo dnf install ./*.rpm -y
+```
+--------------------------------------------------------------------
 #### Gnome dock and Gnome-tweaks
 ```
 sudo dnf install gnome-tweaks gnome-shell-extension-dash-to-dock gnome-extensions-app -y
 ```
 ##### search app "Extensions" and enable dock
 --------------------------------------------------------------------
-#### [Go](https://go.dev/doc/install)
-```
-sudo dnf install golang -y
-```
+
+
+
+
+
+
 #### [UV for python](https://astral.sh/blog/uv)
 ```
 curl -LsSf https://astral.sh/uv/install.sh | sh
 ```
 --------------------------------------------------------------------
-#### [Docker](https://docs.docker.com/desktop/install/fedora)
-```
-gpg --generate-key
-pass init YOURKEY
-```
---------------------------------------------------------------------
-#### [Warp-terminal](https://www.warp.dev)
---------------------------------------------------------------------
-
-
-
-
-#### Ansible + molecule + pip!!!!!!!!!!!!!!!!!!!!!!!!!!
+#### Ansible + molecule + pip
 ```
 sudo dnf install -y ansible
 pip3 install "ansible-lint"
-python3.11 -m pip install ansible molecule
+python3.13 -m pip install ansible molecule
 python3 -m pip install --upgrade --user ansible
-python3.11 -m pip uninstall ansible molecule
+python3.13 -m pip uninstall ansible molecule
 ```
 --------------------------------------------------------------------
 ```
 ansible --version
 molecule --version
+```
+#### [Docker](https://docs.docker.com/desktop/install/fedora)
+```
+gpg --generate-key
+pass init YOURKEY
 ```
 --------------------------------------------------------------------
 #### [Plafon](https://plafon.gitbook.io/fedora-zero)
