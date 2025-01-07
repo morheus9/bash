@@ -67,11 +67,7 @@ sudo dnf install golang -y
 ```
 --------------------------------------------------------------------
 #### [Warp-terminal](https://www.warp.dev)
-```
-wget --inet4-only "https://app.warp.dev/get_warp?package=rpm"
-sudo dnf update
-sudo dnf install ./*.rpm -y
-```
+#### [Podman Desktop](https://podman-desktop.io/docs/installation/linux-install)
 --------------------------------------------------------------------
 #### Gnome dock and Gnome-tweaks
 ```
