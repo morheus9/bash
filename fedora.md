@@ -43,13 +43,13 @@ keepcache=True
 EOF
 ```
 --------------------------------------------------------------------
-#### Kodecs + Gcc + timeshift, transmission, VirtualBox
+#### Kodecs + Gcc + timeshift, transmission
 ```
 sudo dnf install gstreamer1-plugins-{bad-\*,good-\*,base} gstreamer1-plugin-openh264 gstreamer1-libav --exclude=gstreamer1-plugins-bad-free-devel -y \
 && sudo dnf install lame\* --exclude=lame-devel -y \
 && sudo dnf group upgrade --with-optional Multimedia -y \
 && sudo dnf install make automake gcc gcc-c++ kernel-devel -y \
-&& sudo dnf install timeshift transmission VirtualBox kernel-devel-$(uname -r) akmod-VirtualBox -y
+&& sudo dnf install timeshift transmission  kernel-devel-$(uname -r)  -y
 
 ```
 --------------------------------------------------------------------
