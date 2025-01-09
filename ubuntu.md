@@ -1,20 +1,31 @@
-
+##### Upgrade alias
+```
+sudo echo 'alias upg="sudo snap refresh && sudo apt update && sudo apt upgrade -y"' >> ~/.bashrc
+source ~/.bashrc
+upg
+```
 --------------------------------------------------------------------
 - Kodecs + gcc
 - Git, transmission, timeshift, vlc
 - Vscode
+- Warp
 ```
+wget -qO- https://releases.warp.dev/linux/keys/warp.asc | gpg --dearmor > warpdotdev.gpg
+sudo install -D -o root -g root -m 644 warpdotdev.gpg /etc/apt/keyrings/warpdotdev.gpg
+sudo sh -c 'echo "deb [arch=amd64 signed-by=/etc/apt/keyrings/warpdotdev.gpg] https://releases.warp.dev/linux/deb stable main" > /etc/apt/sources.list.d/warpdotdev.list'
+rm warpdotdev.gpg
+
 wget -c -O code.deb "https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64"
+
 sudo apt update
-sudo apt install curl snapd ubuntu-restricted-extras libavcodec-extra build-essential git transmission timeshift vlc ./*.deb -y
+sudo apt install curl ubuntu-restricted-extras libavcodec-extra build-essential git transmission timeshift vlc warp-terminal ./*.deb -y
 rm -f ./*.deb
 sudo apt autoremove
 ```
 --------------------------------------------------------------------
 ##### [Podman Desktop](https://podman-desktop.io/docs/installation/linux-install)
-##### [Google Chrome](https://www.google.com/chrome)
 --------------------------------------------------------------------
-##### go + rust + pip + python + poetry + zsh
+##### go, rust, pip, python, poetry, zsh
 ```
 sudo snap install go --classic
 curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf | sh
@@ -47,5 +58,5 @@ ssh-copy-id -i ~/.ssh/id_ed25519.pub -f pi@ххх.ххх.ххх.ххх
 ```
 --------------------------------------------------------------------
 ##### [Vscode](https://code.visualstudio.com)
---------------------------------------------------------------------
 ##### [Warp-terminal](https://www.warp.dev)
+##### [Google Chrome](https://www.google.com/chrome)
