@@ -1,7 +1,4 @@
-- Keys
-```
-gpg --full-generate-key
-```
+
 --------------------------------------------------------------------
 - Kodecs + gcc
 - Git, transmission, timeshift, vlc
