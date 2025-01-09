@@ -23,7 +23,7 @@ rm -f ./*.deb
 sudo apt autoremove
 ```
 --------------------------------------------------------------------
-##### [Podman Desktop](https://podman-desktop.io/docs/installation/linux-install)
+##### [Podman Desktop](https://podman-desktop.io/downloads)
 --------------------------------------------------------------------
 ##### go, rust, pip, python, poetry, zsh
 ```
