@@ -5,21 +5,24 @@ source ~/.bashrc
 upg
 ```
 --------------------------------------------------------------------
+- Warp
 - Kodecs + gcc
 - Git, transmission, timeshift, vlc
 - Vscode
-- Warp
+- Chrome
 ```
 wget -qO- https://releases.warp.dev/linux/keys/warp.asc | gpg --dearmor > warpdotdev.gpg
 sudo install -D -o root -g root -m 644 warpdotdev.gpg /etc/apt/keyrings/warpdotdev.gpg
 sudo sh -c 'echo "deb [arch=amd64 signed-by=/etc/apt/keyrings/warpdotdev.gpg] https://releases.warp.dev/linux/deb stable main" > /etc/apt/sources.list.d/warpdotdev.list'
 rm warpdotdev.gpg
 
+wget -c -O chrome.deb "https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64"
 wget -c -O code.deb "https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64"
 
 sudo apt update
 sudo apt install curl ubuntu-restricted-extras libavcodec-extra build-essential git transmission timeshift vlc warp-terminal ./*.deb -y
 rm -f ./*.deb
+sudo snap remove --purge firefox
 sudo apt autoremove
 ```
 --------------------------------------------------------------------
