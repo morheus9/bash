@@ -63,14 +63,17 @@ conda clean -a
 ```
 ##### [Rye](https://rye.astral.sh/guide)
 ```
-yes | curl -sSf https://rye.astral.sh/get | bash
-rye init --virtual
-rye add aiogram
-rye add --dev black
-rye remove aiogram
-rye lint --fix
-rye sync --update-all
-rye lock
+curl -LsSf https://astral.sh/uv/install.sh | sh
+uv python install 3.12 3.13
+uv tool install ruff
+
+uv venv
+uv pip compile docs/requirements.in \
+   --universal \
+   --output-file docs/requirements.txt
+uv pip sync docs/requirements.txt
+uv add package
+
 ```
 ##### For pyinstaller compilation to .bin use:
 ```
