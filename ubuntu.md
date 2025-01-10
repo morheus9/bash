@@ -16,7 +16,7 @@ sudo install -D -o root -g root -m 644 warpdotdev.gpg /etc/apt/keyrings/warpdotd
 sudo sh -c 'echo "deb [arch=amd64 signed-by=/etc/apt/keyrings/warpdotdev.gpg] https://releases.warp.dev/linux/deb stable main" > /etc/apt/sources.list.d/warpdotdev.list'
 rm warpdotdev.gpg
 
-wget -c -O chrome.deb "https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64"
+wget -c -O chrome.deb "https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb"
 wget -c -O code.deb "https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64"
 
 sudo apt update
