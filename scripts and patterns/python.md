@@ -8,8 +8,22 @@ For installing python use:
 ```
 sudo add-apt-repository ppa:deadsnakes/ppa
 sudo apt update
-sudo apt install python3.12 python3.12-venv python3-pip python-is-python3
-python3.12 -V
+sudo apt install python3.13 python3.13-venv python3-pip python-is-python3
+python3.13 -V
+```
+##### [UV](https://docs.astral.sh/uv/getting-started/features/)
+```
+curl -LsSf https://astral.sh/uv/install.sh | sh
+uv python install 3.12 3.13
+uv tool install ruff
+
+uv venv
+uv pip compile docs/requirements.in \
+   --universal \
+   --output-file docs/requirements.txt
+uv pip sync docs/requirements.txt
+uv add package
+
 ```
 ##### [Poetry](https://python-poetry.org/docs/#installing-with-the-official-installer)
 ```
@@ -34,14 +48,6 @@ poetry cache list
 poetry cache clear PyPI --all
 poetry env info
 ```
-##### [Pixi](https://pixi.sh/latest/tutorials/python/)
-```
-curl -fsSL https://pixi.sh/install.sh | bash
-pixi self-update
-pixi add aiogram
-pixi add --dev black
-pixi lint --fix
-```
 ##### [Miniconda](https://docs.anaconda.com/miniconda/#quick-command-line-install)
 ```
 # https://docs.conda.io/projects/miniconda/en/latest/
@@ -60,20 +66,6 @@ conda list
 conda remove -y pandas
 conda env export -f requirements.yml
 conda clean -a
-```
-##### [Rye](https://rye.astral.sh/guide)
-```
-curl -LsSf https://astral.sh/uv/install.sh | sh
-uv python install 3.12 3.13
-uv tool install ruff
-
-uv venv
-uv pip compile docs/requirements.in \
-   --universal \
-   --output-file docs/requirements.txt
-uv pip sync docs/requirements.txt
-uv add package
-
 ```
 ##### For pyinstaller compilation to .bin use:
 ```
