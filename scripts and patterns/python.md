@@ -15,15 +15,32 @@ python3.13 -V
 ```
 curl -LsSf https://astral.sh/uv/install.sh | sh
 uv python install 3.12 3.13
-uv tool install ruff
+uv python list
+uv python find
+uv python pin
+uv python uninstall
 
+uv tool install ruff
+uv tool uninstall ruff
+uv tool run ruff
+uv tool list
+uv tool update-shell
+
+uv init
 uv venv
+
+uv add package
+uv tree
+uv remove package
+
 uv pip compile docs/requirements.in \
    --universal \
    --output-file docs/requirements.txt
 uv pip sync docs/requirements.txt
-uv add package
+uv lock
 
+uv build
+uv publish
 ```
 ##### [Poetry](https://python-poetry.org/docs/#installing-with-the-official-installer)
 ```
