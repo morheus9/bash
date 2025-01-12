@@ -1,3 +1,3 @@
 ### [UBUNTU](readme/ubuntu.md)
-### [FEDORA](fedora.md)
-### [ARCH](arch.md)
+### [FEDORA](readme/fedora.md)
+### [ARCH](readme/arch.md)
