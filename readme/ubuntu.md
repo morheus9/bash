@@ -31,15 +31,17 @@ sudo apt autoremove
 ##### go, rust, pip, python, poetry, zsh
 ```
 sudo snap install go --classic
-curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf | sh
+
 sudo add-apt-repository ppa:deadsnakes/ppa
 sudo apt update
 sudo apt install python3.12 python3.12-venv python3-pip python-is-python3
 curl -LsSf https://astral.sh/uv/install.sh | sh
+
+curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf | sh
+
 sudo apt install zsh
 chsh -s $(which zsh)
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-sudo echo 'alias upg="sudo snap refresh && sudo apt update && sudo apt upgrade -y"' >> ~/.zshrc
 ```
 ##### [Python](https://github.com/morheus9/bash/blob/main/scripts%20and%20patterns/python.md)
 --------------------------------------------------------------------
