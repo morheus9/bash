@@ -28,7 +28,7 @@ sudo apt autoremove
 --------------------------------------------------------------------
 ##### [Podman Desktop](https://podman-desktop.io/downloads)
 --------------------------------------------------------------------
-##### go, rust, pip, python, poetry, zsh
+##### go, pip, python, uv, rust, zsh
 ```
 sudo snap install go --classic
 
