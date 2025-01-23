@@ -14,6 +14,8 @@ python3.13 -V
 ##### [UV](https://docs.astral.sh/uv/getting-started/features/)
 ```
 curl -LsSf https://astral.sh/uv/install.sh | sh
+uv self update
+
 uv python install 3.12 3.13
 uv python list
 uv python find
