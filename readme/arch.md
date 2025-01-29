@@ -2,13 +2,13 @@
 ```
 sudo pacman-mirrors -f 
 ```
-Yay + Go
-```
-sudo pacman -S --needed git base-devel && git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si
-```
 Добавить ключ
 ```
 gpg --full-generate-key
+```
+Yay + Go
+```
+sudo pacman -S --needed git base-devel && git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si
 ```
 Установить пакеты
 ```
@@ -17,6 +17,11 @@ visual-studio-code-bin \
 google-chrome \
 podman-desktop \
 rust
+
+sudo sh -c "echo -e '\n[warpdotdev]\nServer = https://releases.warp.dev/linux/pacman/\$repo/\$arch' >> /etc/pacman.conf"
+sudo pacman-key -r "linux-maintainers@warp.dev"
+sudo pacman-key --lsign-key "linux-maintainers@warp.dev"
+sudo pacman -Sy warp-terminal
 ```
 ```
 sudo pacman -S packagename
@@ -43,15 +48,14 @@ yay packagename
 - visual-studio-code-bin
 - google-chrome
 - [Podman-Desktop](https://podman-desktop.io/docs/installation/linux-install)
-
-Poetry
-```
-curl -sSL https://install.python-poetry.org | python3 -
-```
 K3s
 ```
 curl -sfL https://get.k3s.io | sh -
 mkdir -p ~/.kube
 sudo cp /etc/rancher/k3s/k3s.yaml ~/.kube/config
 sudo chown pi:pi ~/.kube/config
+```
+Poetry
+```
+curl -sSL https://install.python-poetry.org | python3 -
 ```
