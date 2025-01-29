@@ -61,10 +61,6 @@ sudo dnf remove firefox
 sudo dnf install gnome-tweaks gnome-shell-extension-dash-to-dock gnome-extensions-app -y
 ```
 #### Search app "Extensions" and enable dock
-#### Config for Firefox, change to 1
-```
-browser.uidensity
-```
 --------------------------------------------------------------------
 #### [UV for python](https://astral.sh/blog/uv)
 ```
@@ -102,4 +98,8 @@ ssh-copy-id -i ~/.ssh/id_ed25519.pub -f pi@192.168.1.105
 ```
 gpg --generate-key
 pass init YOURKEY
+```
+#### Config for Firefox, change to 1
+```
+browser.uidensity
 ```
