@@ -1,4 +1,4 @@
-#### To add 'Fluthub', 'RPM Fusion repositories' and 'non-free RPM Fusion repositories' use:
+#### To add 'Fluthub', 'RPM Fusion repositories' and 'non-free RPM Fusion repositories':
 ```
 sudo dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm -y \
 && sudo dnf install https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm -y \
@@ -7,7 +7,7 @@ sudo dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-rele
 --------------------------------------------------------------------
 #### Update
 ```
-sudo echo 'alias upg="sudo dnf upgrade -y --refresh && sudo dnf autoremove -y"' >> ~/.bashrc \
+sudo echo 'alias upg="sudo dnf upgrade -y --refresh && sudo dnf autoremove && sudo dnf clean all -y"' >> ~/.bashrc \
 && source ~/.bashrc \
 && upg
 ```
@@ -17,14 +17,6 @@ sudo echo 'alias upg="sudo dnf upgrade -y --refresh && sudo dnf autoremove -y"' 
 sudo fwupdmgr refresh --force \
 && sudo fwupdmgr get-updates \
 && sudo fwupdmgr update
-```
---------------------------------------------------------------------
-#### SSH
-```
-ssh-keygen -t ed25519
-chmod 700 ~/.ssh/id_ed25519
-ssh-copy-id -i ~/.ssh/id_ed25519.pub -f pi@192.168.1.104
-ssh-copy-id -i ~/.ssh/id_ed25519.pub -f pi@192.168.1.105
 ```
 --------------------------------------------------------------------
 #### If you have SSD add to fstab parameters after "compress=zstd:1" for sections: /, /home, /var/log:
@@ -43,30 +35,25 @@ keepcache=True
 EOF
 ```
 --------------------------------------------------------------------
-#### Kodecs + Gcc + timeshift, transmission
+#### Kodecs + Gcc + timeshift, transmission, warp, vscode, golang, chrome
 ```
 sudo dnf install gstreamer1-plugins-{bad-\*,good-\*,base} gstreamer1-plugin-openh264 gstreamer1-libav --exclude=gstreamer1-plugins-bad-free-devel -y \
-&& sudo dnf install lame\* --exclude=lame-devel -y \
-&& sudo dnf group upgrade --with-optional Multimedia -y \
-&& sudo dnf install make automake gcc gcc-c++ kernel-devel -y \
-&& sudo dnf install timeshift transmission  kernel-devel-$(uname -r)  -y
+sudo dnf install lame\* --exclude=lame-devel make automake gcc gcc-c++ kernel-devel kernel-devel-$(uname -r) -y \
+sudo dnf group upgrade --with-optional Multimedia -y
 
-```
---------------------------------------------------------------------
-#### Vscode
-```
 sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
-sudo sh -c 'echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" > /etc/yum.repos.d/vscode.repo' \
-&& dnf check-update \
-&& sudo dnf install code -y
+sudo sh -c 'echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" > /etc/yum.repos.d/vscode.repo'
+
+sudo rpm --import https://releases.warp.dev/linux/keys/warp.asc
+sudo sh -c 'echo -e "[warpdotdev]\nname=warpdotdev\nbaseurl=https://releases.warp.dev/linux/rpm/stable\nenabled=1\ngpgcheck=1\ngpgkey=https://releases.warp.dev/linux/keys/warp.asc" > /etc/yum.repos.d/warpdotdev.repo'
+dnf check-update
+
+wget -c -O chrome.rpm "https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb"
+sudo dnf install timeshift transmission  warp-terminal code golang ./*.rpm -y
+rm -f ./*.rpm
+sudo dnf remove firefox
 ```
 --------------------------------------------------------------------
-#### [Go](https://go.dev/doc/install)
-```
-sudo dnf install golang -y
-```
---------------------------------------------------------------------
-#### [Warp-terminal](https://www.warp.dev)
 #### [Podman Desktop](https://podman-desktop.io/docs/installation/linux-install)
 --------------------------------------------------------------------
 #### Gnome dock and Gnome-tweaks
@@ -97,11 +84,22 @@ python3.13 -m pip uninstall ansible molecule
 ansible --version
 molecule --version
 ```
+--------------------------------------------------------------------
+--------------------------------------------------------------------
+--------------------------------------------------------------------
+#### [Warp-terminal](https://www.warp.dev)
 #### [Docker](https://docs.docker.com/desktop/install/fedora)
+#### [Plafon](https://plafon.gitbook.io/fedora-zero)
+#### [Google Chrome](https://www.google.com/chrome)
+--------------------------------------------------------------------
+#### SSH
+```
+ssh-keygen -t ed25519
+chmod 700 ~/.ssh/id_ed25519
+ssh-copy-id -i ~/.ssh/id_ed25519.pub -f pi@192.168.1.104
+ssh-copy-id -i ~/.ssh/id_ed25519.pub -f pi@192.168.1.105
+```
 ```
 gpg --generate-key
 pass init YOURKEY
 ```
---------------------------------------------------------------------
-#### [Plafon](https://plafon.gitbook.io/fedora-zero)
---------------------------------------------------------------------
