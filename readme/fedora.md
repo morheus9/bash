@@ -51,7 +51,6 @@ dnf check-update
 wget -c -O chrome.rpm "https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.rpm"
 sudo dnf install transmission warp-terminal code golang ./*.rpm -y
 rm -f ./*.rpm
-sudo dnf remove firefox
 ```
 --------------------------------------------------------------------
 #### [Podman Desktop](https://podman-desktop.io/docs/installation/linux-install)
