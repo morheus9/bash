@@ -35,9 +35,10 @@ keepcache=True
 EOF
 ```
 --------------------------------------------------------------------
-#### Kodecs + Gcc + timeshift, transmission, warp, vscode, golang, chrome
+#### Kodecs + Gcc + transmission, warp, vscode, golang, chrome
 ```
-sudo dnf install gstreamer1-plugins-{bad-\*,good-\*,base} gstreamer1-plugin-openh264 gstreamer1-libav --exclude=gstreamer1-plugins-bad-free-devel -y \
+sudo dnf install gstreamer1-plugins-{bad-\*,good-\*,base}
+sudo dnf install gstreamer1-plugin-openh264 gstreamer1-libav --exclude=gstreamer1-plugins-bad-free-devel -y \
 sudo dnf install lame\* --exclude=lame-devel make automake gcc gcc-c++ kernel-devel kernel-devel-$(uname -r) -y \
 sudo dnf group upgrade --with-optional Multimedia -y
 
@@ -48,8 +49,8 @@ sudo rpm --import https://releases.warp.dev/linux/keys/warp.asc
 sudo sh -c 'echo -e "[warpdotdev]\nname=warpdotdev\nbaseurl=https://releases.warp.dev/linux/rpm/stable\nenabled=1\ngpgcheck=1\ngpgkey=https://releases.warp.dev/linux/keys/warp.asc" > /etc/yum.repos.d/warpdotdev.repo'
 dnf check-update
 
-wget -c -O chrome.rpm "https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb"
-sudo dnf install timeshift transmission  warp-terminal code golang ./*.rpm -y
+wget -c -O chrome.rpm "https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.rpm"
+sudo dnf install transmission warp-terminal code golang ./*.rpm -y
 rm -f ./*.rpm
 sudo dnf remove firefox
 ```
