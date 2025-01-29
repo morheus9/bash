@@ -21,7 +21,7 @@ sudo fwupdmgr refresh --force \
 --------------------------------------------------------------------
 #### If you have SSD add to fstab parameters after "compress=zstd:1" for sections: /, /home, /var/log:
 ```
-sudo gnome-text-editor /etc/fstab
+sudo nano /etc/fstab
 btrfs   subvol=home,compress=zstd:1,defaults,noatime,discard=async 0 0
 ```
 --------------------------------------------------------------------
@@ -37,9 +37,8 @@ EOF
 --------------------------------------------------------------------
 #### Kodecs + Gcc + transmission, warp, vscode, golang, chrome
 ```
-sudo dnf install gstreamer1-plugins-{bad-\*,good-\*,base}
-sudo dnf install gstreamer1-plugin-openh264 gstreamer1-libav --exclude=gstreamer1-plugins-bad-free-devel -y \
-sudo dnf install lame\* --exclude=lame-devel make automake gcc gcc-c++ kernel-devel kernel-devel-$(uname -r) -y \
+sudo dnf install gstreamer1-plugins-base gstreamer1-plugins-good gstreamer1-plugins-bad-free gstreamer1-plugins-bad-free-extras gstreamer1-plugins-ugly gstreamer1-ffmpeg
+sudo dnf install lame\* --exclude=lame-devel make automake gcc gcc-c++ kernel-devel-$(uname -r) -y \
 sudo dnf group upgrade --with-optional Multimedia -y
 
 sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
@@ -57,16 +56,17 @@ sudo dnf remove firefox
 --------------------------------------------------------------------
 #### [Podman Desktop](https://podman-desktop.io/docs/installation/linux-install)
 --------------------------------------------------------------------
-#### Gnome dock and Gnome-tweaks
-```
-sudo dnf install gnome-tweaks gnome-shell-extension-dash-to-dock gnome-extensions-app -y
-```
-#### Search app "Extensions" and enable dock
---------------------------------------------------------------------
 #### [UV for python](https://astral.sh/blog/uv)
 ```
 curl -LsSf https://astral.sh/uv/install.sh | sh
 ```
+--------------------------------------------------------------------
+--------------------------------------------------------------------
+--------------------------------------------------------------------
+#### [Warp-terminal](https://www.warp.dev)
+#### [Docker](https://docs.docker.com/desktop/install/fedora)
+#### [Google Chrome](https://www.google.com/chrome)
+#### [Plafon](https://plafon.gitbook.io/fedora-zero)
 --------------------------------------------------------------------
 #### Ansible + molecule + pip
 ```
@@ -81,14 +81,6 @@ python3.13 -m pip uninstall ansible molecule
 ansible --version
 molecule --version
 ```
---------------------------------------------------------------------
---------------------------------------------------------------------
---------------------------------------------------------------------
-#### [Warp-terminal](https://www.warp.dev)
-#### [Docker](https://docs.docker.com/desktop/install/fedora)
-#### [Plafon](https://plafon.gitbook.io/fedora-zero)
-#### [Google Chrome](https://www.google.com/chrome)
---------------------------------------------------------------------
 #### SSH
 ```
 ssh-keygen -t ed25519
@@ -104,3 +96,9 @@ pass init YOURKEY
 ```
 browser.uidensity
 ```
+#### Gnome dock and Gnome-tweaks
+```
+sudo dnf install gnome-tweaks gnome-shell-extension-dash-to-dock gnome-extensions-app -y
+```
+--------------------------------------------------------------------
+#### Search app "Extensions" and enable dock
