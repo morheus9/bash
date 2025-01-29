@@ -14,15 +14,10 @@ sudo pacman -S --needed git base-devel && git clone https://aur.archlinux.org/ya
 ```
 yay -S \
 visual-studio-code-bin \
+warp-terminal-bin \
 google-chrome \
 podman-desktop \
 rust
-
-sudo sh -c "echo -e '\n[warpdotdev]\nServer = https://releases.warp.dev/linux/pacman/\$repo/\$arch' >> /etc/pacman.conf"
-sudo pacman-key -r "linux-maintainers@warp.dev"
-sudo pacman-key --lsign-key "linux-maintainers@warp.dev"
-sudo pacman -Sy warp-terminal
-```
 ```
 sudo pacman -S packagename
 ```
@@ -46,6 +41,7 @@ yay packagename
 ```
 Список из AUR:
 - visual-studio-code-bin
+- warp-terminal-bin
 - google-chrome
 - [Podman-Desktop](https://podman-desktop.io/docs/installation/linux-install)
 K3s
