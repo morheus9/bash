@@ -19,6 +19,7 @@ google-chrome \
 podman-desktop \
 rust
 ```
+```
 sudo pacman -S packagename
 ```
 Удалить ненужные пакеты
