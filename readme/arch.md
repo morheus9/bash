@@ -17,6 +17,7 @@ visual-studio-code-bin \
 warp-terminal-bin \
 google-chrome \
 podman-desktop \
+go \
 rust
 ```
 ```
