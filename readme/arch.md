@@ -6,9 +6,9 @@ sudo pacman-mirrors -f
 ```
 gpg --full-generate-key
 ```
-Yay + Go
+Yay
 ```
-sudo pacman -S --needed git base-devel && git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si
+pacman -S --needed git base-devel yay
 ```
 Установить пакеты
 ```
