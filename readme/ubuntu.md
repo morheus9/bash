@@ -1,10 +1,3 @@
-##### Upgrade alias
-```
-sudo echo 'alias upg="sudo snap refresh && sudo apt update && sudo apt upgrade -y"' >> ~/.bashrc
-source ~/.bashrc
-upg
-```
---------------------------------------------------------------------
 - Warp
 - Kodecs + gcc
 - Git, transmission, timeshift, vlc
@@ -20,10 +13,17 @@ wget -c -O chrome.deb "https://dl.google.com/linux/direct/google-chrome-stable_c
 wget -c -O code.deb "https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64"
 
 sudo apt update
-sudo apt install curl ubuntu-restricted-extras libavcodec-extra build-essential git transmission timeshift vlc warp-terminal ./*.deb -y
+sudo apt install snapd curl ubuntu-restricted-extras libavcodec-extra build-essential git transmission timeshift vlc warp-terminal ./*.deb -y
 rm -f ./*.deb
 sudo snap remove --purge firefox
 sudo apt autoremove
+```
+--------------------------------------------------------------------
+##### Upgrade alias
+```
+sudo echo 'alias upg="sudo snap refresh && sudo apt update && sudo apt upgrade -y"' >> ~/.bashrc
+source ~/.bashrc
+upg
 ```
 --------------------------------------------------------------------
 ##### [Podman Desktop](https://podman-desktop.io/downloads)
