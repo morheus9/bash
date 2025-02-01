@@ -1,8 +1,9 @@
-- Warp
 - Kodecs + gcc
 - Git, transmission, timeshift, vlc
-- Vscode
-- Chrome
+- [Vscode](https://code.visualstudio.com)
+- [Warp-terminal](https://www.warp.dev)
+- [Google Chrome](https://www.google.com/chrome)
+- [Podman Desktop](https://podman-desktop.io/downloads)
 ```
 wget -qO- https://releases.warp.dev/linux/keys/warp.asc | gpg --dearmor > warpdotdev.gpg
 sudo install -D -o root -g root -m 644 warpdotdev.gpg /etc/apt/keyrings/warpdotdev.gpg
@@ -13,9 +14,10 @@ wget -c -O chrome.deb "https://dl.google.com/linux/direct/google-chrome-stable_c
 wget -c -O code.deb "https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64"
 
 sudo apt update
-sudo apt install snapd curl ubuntu-restricted-extras libavcodec-extra build-essential git transmission timeshift vlc warp-terminal ./*.deb -y
+sudo apt install snapd flatpak curl ubuntu-restricted-extras libavcodec-extra build-essential git transmission timeshift vlc warp-terminal ./*.deb -y
+flatpak remote-add --if-not-exists --user flathub https://flathub.org/repo/flathub.flatpakrepo
+flatpak install --user flathub io.podman_desktop.PodmanDesktop
 rm -f ./*.deb
-sudo snap remove --purge firefox
 sudo apt autoremove
 ```
 --------------------------------------------------------------------
@@ -25,8 +27,6 @@ sudo echo 'alias upg="sudo snap refresh && sudo apt update && sudo apt upgrade -
 source ~/.bashrc
 upg
 ```
---------------------------------------------------------------------
-##### [Podman Desktop](https://podman-desktop.io/downloads)
 --------------------------------------------------------------------
 ##### go, pip, python, uv, rust, zsh
 ```
