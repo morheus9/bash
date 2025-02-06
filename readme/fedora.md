@@ -12,11 +12,13 @@ sudo echo 'alias upg="sudo dnf upgrade -y --refresh && sudo dnf autoremove && su
 && upg
 ```
 --------------------------------------------------------------------
-#### Firmware updates:
+#### Firmware updates + gpg keys:
 ```
 sudo fwupdmgr refresh --force \
 && sudo fwupdmgr get-updates \
 && sudo fwupdmgr update
+
+gpg --full-generate-key
 ```
 --------------------------------------------------------------------
 #### If you have SSD add to fstab parameters after "compress=zstd:1" for sections: /, /home, /var/log:
