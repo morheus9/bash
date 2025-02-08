@@ -25,11 +25,13 @@ rm -f ./*.deb
 sudo apt autoremove
 ```
 --------------------------------------------------------------------
-##### Upgrade alias
+##### Upgrade alias + gpg
 ```
 sudo echo 'alias upg="sudo snap refresh && sudo apt update && sudo apt upgrade -y"' >> ~/.bashrc
 source ~/.bashrc
 upg
+
+gpg --full-generate-key
 ```
 --------------------------------------------------------------------
 ##### go, pip, python, uv, rust, zsh
