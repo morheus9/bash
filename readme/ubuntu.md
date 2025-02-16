@@ -1,4 +1,4 @@
-- firefox
+- Firefox
 - Kodecs + gcc
 - Git, transmission, timeshift, vlc
 - [Warp-terminal](https://www.warp.dev)
