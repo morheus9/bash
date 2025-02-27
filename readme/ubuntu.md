@@ -1,6 +1,6 @@
-- [Google Chrome](https://www.google.com/chrome)
 - Kodecs + gcc
 - Git, transmission, timeshift, vlc
+- [Google Chrome](https://www.google.com/chrome)
 - [Warp-terminal](https://www.warp.dev)
 - [Vscode](https://code.visualstudio.com)
 - [Podman Desktop](https://podman-desktop.io/downloads)
