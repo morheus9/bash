@@ -1,4 +1,4 @@
-- Firefox
+- [Google Chrome](https://www.google.com/chrome)
 - Kodecs + gcc
 - Git, transmission, timeshift, vlc
 - [Warp-terminal](https://www.warp.dev)
@@ -15,11 +15,13 @@ sudo install -D -o root -g root -m 644 packages.microsoft.gpg /etc/apt/keyrings/
 echo "deb [arch=amd64,arm64,armhf signed-by=/etc/apt/keyrings/packages.microsoft.gpg] https://packages.microsoft.com/repos/code stable main" |sudo tee /etc/apt/sources.list.d/vscode.list > /dev/null
 rm -f packages.microsoft.gpg
 
+wget -c -O chrome.deb "https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb"
+
 sudo apt update
-sudo apt install snapd flatpak curl ubuntu-restricted-extras libavcodec-extra build-essential git transmission timeshift vlc warp-terminal code -y
-sudo snap install firefox
+sudo apt install snapd flatpak curl ubuntu-restricted-extras libavcodec-extra build-essential git transmission timeshift vlc warp-terminal code *.deb -y
 flatpak remote-add --if-not-exists --user flathub https://flathub.org/repo/flathub.flatpakrepo
 flatpak install --user flathub io.podman_desktop.PodmanDesktop
+rm -f ./*.deb
 sudo apt autoremove
 ```
 --------------------------------------------------------------------
@@ -73,5 +75,4 @@ ssh-copy-id -i ~/.ssh/id_ed25519.pub -f pi@ххх.ххх.ххх.ххх
 --------------------------------------------------------------------
 ##### [Vscode](https://code.visualstudio.com)
 ##### [Warp-terminal](https://www.warp.dev)
-##### [Google Chrome](https://www.google.com/chrome)
 ##### [Python](https://github.com/morheus9/bash/blob/main/scripts%20and%20patterns/python.md)
