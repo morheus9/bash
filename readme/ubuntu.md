@@ -1,9 +1,9 @@
 - Kodecs + gcc
 - Git, transmission, timeshift, vlc
+- [Podman Desktop](https://podman-desktop.io/downloads)
 - [Google Chrome](https://www.google.com/chrome)
 - [Warp-terminal](https://www.warp.dev)
 - [Vscode](https://code.visualstudio.com)
-- [Podman Desktop](https://podman-desktop.io/downloads)
 ```
 wget -qO- https://releases.warp.dev/linux/keys/warp.asc | gpg --dearmor > warpdotdev.gpg
 sudo install -D -o root -g root -m 644 warpdotdev.gpg /etc/apt/keyrings/warpdotdev.gpg
