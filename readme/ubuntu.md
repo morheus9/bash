@@ -50,9 +50,22 @@ chsh -s $(which zsh)
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```
 --------------------------------------------------------------------
-#### Config for Firefox, change to 1
+##### [Librewol](https://librewolf.net)
+install:
+```
+sudo apt update && sudo apt install extrepo -y
+sudo extrepo enable librewolf
+sudo apt update && sudo apt install librewolf -y
+```
+#### about:config
+change to 1:
 ```
 browser.uidensity
+```
+change to false:
+```
+OSCP
+security.OSCP.require
 ```
 --------------------------------------------------------------------
 ##### Ansible
