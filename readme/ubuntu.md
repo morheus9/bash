@@ -50,7 +50,7 @@ chsh -s $(which zsh)
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```
 --------------------------------------------------------------------
-##### [Librewol](https://librewolf.net)
+##### [Librewolf](https://librewolf.net)
 install:
 ```
 sudo apt update && sudo apt install extrepo -y
