@@ -38,7 +38,7 @@ uv remove package
 uv pip compile docs/requirements.in \
    --universal \
    --output-file docs/requirements.txt
-uv pip sync docs/requirements.txt
+uv pip sync pyproject.toml
 uv lock
 
 uv build
