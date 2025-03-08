@@ -30,16 +30,14 @@ uv tool update-shell
 
 uv init
 uv venv
-
+source .venv/bin/activate
+uv pip install .
+uv pip sync pyproject.toml
 uv add package
+
+uv lock
 uv tree
 uv remove package
-
-uv pip compile docs/requirements.in \
-   --universal \
-   --output-file docs/requirements.txt
-uv pip sync pyproject.toml
-uv lock
 
 uv build
 uv publish
