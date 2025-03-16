@@ -1,0 +1,8 @@
+sudo curl -sfL https://get.k3s.io | sh -
+
+mkdir -p ~/.kube
+sudo cp -f /etc/rancher/k3s/k3s.yaml ~/.kube/config
+sudo chown $(id -u):$(id -g) ~/.kube/config
+export KUBECONFIG=~/.kube/config
+
+kubectl get pods --all-namespaces
