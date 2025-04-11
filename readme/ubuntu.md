@@ -30,8 +30,6 @@ sudo apt autoremove
 sudo echo 'alias upg="sudo snap refresh && sudo apt update && sudo apt upgrade -y"' >> ~/.bashrc
 source ~/.bashrc
 upg
-
-gpg --full-generate-key
 ```
 --------------------------------------------------------------------
 ##### go, pip, python, uv, rust, zsh
