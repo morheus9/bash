@@ -25,7 +25,7 @@ rm -f ./*.deb
 sudo apt autoremove
 ```
 --------------------------------------------------------------------
-##### Upgrade alias + gpg
+##### Upgrade alias
 ```
 sudo echo 'alias upg="sudo snap refresh && sudo apt update && sudo apt upgrade -y"' >> ~/.bashrc
 source ~/.bashrc
