@@ -53,10 +53,12 @@ sudo snap install go --classic
 
 sudo add-apt-repository ppa:deadsnakes/ppa
 sudo apt update
-sudo apt install python3.12 python3.12-venv python3-pip python-is-python3
+sudo apt install python3.13 python3.13-venv python3-pip python-is-python3
 curl -LsSf https://astral.sh/uv/install.sh | sh
 
 curl -sfL https://get.k3s.io | sh -
+export KUBECONFIG=/etc/rancher/k3s/k3s.yaml
+kubectl get pods --all-namespaces
 
 sudo apt install zsh
 chsh -s $(which zsh)
