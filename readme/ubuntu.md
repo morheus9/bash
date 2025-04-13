@@ -34,6 +34,10 @@ sudo systemctl enable docker.service
 
 rm -f ./*.deb
 sudo apt autoremove
+
+sudo apt-get install pass
+gpg --full-generate-key
+pass init
 ```
 --------------------------------------------------------------------
 ##### Upgrade alias
@@ -43,7 +47,7 @@ source ~/.bashrc
 upg
 ```
 --------------------------------------------------------------------
-##### go, pip, python, uv, rust, zsh
+##### go, pip, python, uv, k3s, zsh
 ```
 sudo snap install go --classic
 
@@ -52,7 +56,7 @@ sudo apt update
 sudo apt install python3.12 python3.12-venv python3-pip python-is-python3
 curl -LsSf https://astral.sh/uv/install.sh | sh
 
-curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf | sh
+curl -sfL https://get.k3s.io | sh -
 
 sudo apt install zsh
 chsh -s $(which zsh)
