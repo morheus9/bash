@@ -47,32 +47,35 @@ source ~/.bashrc
 upg
 ```
 --------------------------------------------------------------------
-##### go, pip, python, uv, k3s, zsh
+##### k3s
+```
+sudo curl -sfL https://get.k3s.io | sh -
+
+mkdir -p ~/.kube
+sudo cp -f /etc/rancher/k3s/k3s.yaml ~/.kube/config
+sudo chown $(id -u):$(id -g) ~/.kube/config
+
+nano ~/.bashrc
+export KUBECONFIG=~/.kube/config
+source ~/.bashrc
+
+kubectl get pods --all-namespaces
+```
+##### uv
+```
+curl -LsSf https://astral.sh/uv/install.sh | sh
+```
+##### go, zsh, python+pip
 ```
 sudo snap install go --classic
-
-sudo add-apt-repository ppa:deadsnakes/ppa
-sudo apt update
-sudo apt install python3.13 python3.13-venv python3-pip python-is-python3
-curl -LsSf https://astral.sh/uv/install.sh | sh
-
-curl -sfL https://get.k3s.io | sh -
-export KUBECONFIG=/etc/rancher/k3s/k3s.yaml
-kubectl get pods --all-namespaces
-
+--------------------------------------------------------------------
 sudo apt install zsh
 chsh -s $(which zsh)
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-```
 --------------------------------------------------------------------
-##### Firefox install:
-```
-sudo snap install firefox
-```
-#### about:config
-change to 1:
-```
-browser.uidensity
+sudo add-apt-repository ppa:deadsnakes/ppa
+sudo apt update
+sudo apt install python3.13 python3.13-venv python3-pip python-is-python3
 ```
 --------------------------------------------------------------------
 ##### Ansible
@@ -80,7 +83,7 @@ browser.uidensity
 pip3 install "ansible-lint"
 python3.12 -m pip install ansible molecule
 python3 -m pip install --upgrade --user ansible molecule
---------------------------------------------------------------------
+
 ansible --version
 molecule --version
 python3.12 -V
@@ -91,6 +94,12 @@ python3.12 -V
 ssh-keygen -t ed25519
 chmod 700 ~/.ssh/id_ed25519
 ssh-copy-id -i ~/.ssh/id_ed25519.pub -f pi@ххх.ххх.ххх.ххх
+```
+--------------------------------------------------------------------
+#### Firefox little top - about:config
+change to 1:
+```
+browser.uidensity
 ```
 --------------------------------------------------------------------
 ##### [Podman Desktop](https://podman-desktop.io/downloads)
