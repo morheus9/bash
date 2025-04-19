@@ -35,7 +35,6 @@ sudo systemctl enable docker.service
 rm -f ./*.deb
 sudo apt autoremove
 
-sudo apt-get install pass
 gpg --full-generate-key
 pass init
 ```
