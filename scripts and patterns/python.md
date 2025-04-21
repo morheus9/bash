@@ -31,8 +31,7 @@ uv tool update-shell
 uv init
 uv venv
 source .venv/bin/activate
-uv pip install .
-uv pip sync pyproject.toml
+uv sync
 uv add package
 
 uv lock
