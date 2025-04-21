@@ -4,12 +4,23 @@ ____________________________________________________________________
 #!/usr/bin/env python
 chmod +x myfile.py
 ```
-For installing python use:
+##### For installing python use:
 ```
 sudo add-apt-repository ppa:deadsnakes/ppa
 sudo apt update
 sudo apt install python3.13 python3.13-venv python3-pip python-is-python3
 python3.13 -V
+```
+##### For pyinstaller compilation to .bin use:
+```
+pip install pyinstaller
+pyinstaller --onefile main.py
+```
+##### For nuitka:
+```
+sudo apt install patchelf
+pip install nuitka
+nuitka3 --onefile main.py
 ```
 ##### [UV](https://docs.astral.sh/uv/getting-started/features/)
 ```
@@ -83,17 +94,3 @@ conda remove -y pandas
 conda env export -f requirements.yml
 conda clean -a
 ```
-##### For pyinstaller compilation to .bin use:
-```
-pip install pyinstaller
-pyinstaller --onefile main.py
-```
-##### For nuitka:
-```
-sudo apt install patchelf
-pip install nuitka
-nuitka3 --onefile main.py
-```
-
-
-
