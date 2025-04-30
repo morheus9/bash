@@ -5,7 +5,7 @@
 - [Vscode](https://code.visualstudio.com)
 - [Docker](https://docs.docker.com/engine/install/ubuntu)
 - [Docker-desktop](https://docs.docker.com/desktop/setup/install/linux/ubuntu)
-```
+```bash
 wget -qO- https://releases.warp.dev/linux/keys/warp.asc | gpg --dearmor > warpdotdev.gpg
 sudo install -D -o root -g root -m 644 warpdotdev.gpg /etc/apt/keyrings/warpdotdev.gpg
 sudo sh -c 'echo "deb [arch=amd64 signed-by=/etc/apt/keyrings/warpdotdev.gpg] https://releases.warp.dev/linux/deb stable main" > /etc/apt/sources.list.d/warpdotdev.list'
@@ -46,14 +46,14 @@ gnome-extensions enable hidetopbar@mathieu.bidon.ca
 ```
 --------------------------------------------------------------------
 ##### Upgrade alias
-```
+```bash
 sudo echo 'alias upg="sudo snap refresh && sudo apt update && sudo apt upgrade -y"' >> ~/.bashrc
 source ~/.bashrc
 upg
 ```
 --------------------------------------------------------------------
 ##### k3s
-```
+```bash
 sudo curl -sfL https://get.k3s.io | sh -
 
 mkdir -p ~/.kube
@@ -67,11 +67,11 @@ source ~/.bashrc
 kubectl get pods --all-namespaces
 ```
 ##### uv
-```
+```bash
 curl -LsSf https://astral.sh/uv/install.sh | sh
 ```
 ##### go, zsh, python+pip
-```
+```bash
 sudo snap install go --classic
 --------------------------------------------------------------------
 sudo apt install zsh
@@ -84,7 +84,7 @@ sudo apt install python3.13 python3.13-venv python3-pip python-is-python3
 ```
 --------------------------------------------------------------------
 ##### Ansible
-```
+```bash
 pip3 install "ansible-lint"
 python3.12 -m pip install ansible molecule
 python3 -m pip install --upgrade --user ansible molecule
@@ -95,7 +95,7 @@ python3.12 -V
 ```
 --------------------------------------------------------------------
 ##### SSH
-```
+```bash
 ssh-keygen -t ed25519
 chmod 700 ~/.ssh/id_ed25519
 ssh-copy-id -i ~/.ssh/id_ed25519.pub -f pi@ххх.ххх.ххх.ххх
@@ -103,12 +103,12 @@ ssh-copy-id -i ~/.ssh/id_ed25519.pub -f pi@ххх.ххх.ххх.ххх
 --------------------------------------------------------------------
 #### Firefox little top - about:config
 change to 1:
-```
+```bash
 browser.uidensity
 ```
 --------------------------------------------------------------------
 ##### [Podman Desktop](https://podman-desktop.io/downloads)
-```
+```bash
 sudo apt install flatpak
 sudo flatpak remote-add --if-not-exists --user flathub https://flathub.org/repo/flathub.flatpakrepo
 flatpak install --user flathub io.podman_desktop.PodmanDesktop
