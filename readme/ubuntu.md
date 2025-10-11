@@ -88,12 +88,12 @@ sudo apt install python3.13 python3.13-venv python3-pip python-is-python3
 ##### Ansible
 ```bash
 pip3 install "ansible-lint"
-python3.12 -m pip install ansible molecule
+python3.13 -m pip install ansible molecule
 python3 -m pip install --upgrade --user ansible molecule
 
 ansible --version
 molecule --version
-python3.12 -V
+python3.13 -V
 ```
 --------------------------------------------------------------------
 ##### SSH
