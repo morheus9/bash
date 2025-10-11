@@ -37,7 +37,9 @@ sudo apt autoremove
 
 gpg --full-generate-key
 pass init
-
+```
+##### For gnome
+```
 git clone https://gitlab.gnome.org/tuxor1337/hidetopbar.git
 cd hidetopbar
 make
