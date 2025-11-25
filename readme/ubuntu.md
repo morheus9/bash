@@ -22,7 +22,8 @@ echo \
   sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 
 sudo apt update
-sudo apt install curl gettext ubuntu-restricted-extras libavcodec-extra build-essential git transmission warp-terminal docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin  ./*.deb
+sudo apt install curl gettext ubuntu-restricted-extras libavcodec-extra build-essential git  ./*.deb
+!!!!!!!!!!!!sudo apt install curl gettext ubuntu-restricted-extras libavcodec-extra build-essential git transmission warp-terminal docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin  ./*.deb
 
 sudo systemctl enable containerd.service
 sudo systemctl enable docker.service
