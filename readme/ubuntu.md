@@ -40,7 +40,7 @@ pass init
 git clone https://gitlab.gnome.org/tuxor1337/hidetopbar.git
 cd hidetopbar
 make
-gnome-extensions install ./hidetopbar.zip
+gnome-extensions install --force ./hidetopbar.zip
 gnome-extensions enable hidetopbar@mathieu.bidon.ca
 ```
 --------------------------------------------------------------------
