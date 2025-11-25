@@ -39,9 +39,11 @@ EOF
 --------------------------------------------------------------------
 #### Kodecs + Gcc + transmission, warp, vscode, golang, chrome
 ```
-sudo dnf install gstreamer1-plugins-base gstreamer1-plugins-good gstreamer1-plugins-bad-free gstreamer1-plugins-bad-free-extras gstreamer1-plugins-ugly
-sudo dnf install lame\* --exclude=lame-devel
-sudo dnf install make automake gcc gcc-c++ kernel-devel-$(uname -r) -y
+sudo dnf install akmod-nvidia xorg-x11-drv-nvidia-cuda
+sudo akmods --force
+
+sudo dnf install ffmpeg-libs gstreamer1-plugin-libav gstreamer1-plugins-ugly-free ffmpeg-libs
+sudo dnf install make automake gcc gcc-c++ kernel-devel-$(uname -r)
 
 sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
 sudo sh -c 'echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" > /etc/yum.repos.d/vscode.repo'
