@@ -18,7 +18,8 @@ sudo fwupdmgr refresh --force \
 && sudo fwupdmgr get-updates \
 && sudo fwupdmgr update
 
-gpg --full-generate-key
+gpg --generate-key
+pass init YOURKEY
 ```
 --------------------------------------------------------------------
 #### If you have SSD add to fstab parameters after "compress=zstd:1" for sections: /, /home, /var/log:
@@ -91,10 +92,6 @@ ssh-keygen -t ed25519
 chmod 700 ~/.ssh/id_ed25519
 ssh-copy-id -i ~/.ssh/id_ed25519.pub -f pi@192.168.1.104
 ssh-copy-id -i ~/.ssh/id_ed25519.pub -f pi@192.168.1.105
-```
-```
-gpg --generate-key
-pass init YOURKEY
 ```
 #### Config for Firefox, change to 1
 ```
