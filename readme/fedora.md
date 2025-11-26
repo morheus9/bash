@@ -39,8 +39,9 @@ EOF
 --------------------------------------------------------------------
 #### Kodecs + Gcc + transmission, warp, vscode, golang, chrome
 ```
-sudo dnf install akmod-nvidia xorg-x11-drv-nvidia-cuda
-sudo akmods --force
+sudo dnf reinstall mesa-dri-drivers xorg-x11-drv-nouveau
+sudo dnf remove \*nvidia\*
+sudo dracut --force
 
 sudo dnf install ffmpeg-libs gstreamer1-plugin-libav gstreamer1-plugins-ugly-free ffmpeg-libs
 sudo dnf install make automake gcc gcc-c++ kernel-devel-$(uname -r)
