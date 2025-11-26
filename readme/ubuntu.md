@@ -1,33 +1,37 @@
-- Kodecs + gcc
-- Git, transmission, timeshift, vlc
+- [Cursor](https://cursor.com/download)  !!
 - [Google Chrome](https://www.google.com/chrome)
 - [Warp-terminal](https://www.warp.dev)
 - [Vscode](https://code.visualstudio.com)
-- [Docker](https://docs.docker.com/engine/install/ubuntu)
 - [Docker-desktop](https://docs.docker.com/desktop/setup/install/linux/ubuntu)
 ```bash
-wget -qO- https://releases.warp.dev/linux/keys/warp.asc | gpg --dearmor > warpdotdev.gpg
-sudo install -D -o root -g root -m 644 warpdotdev.gpg /etc/apt/keyrings/warpdotdev.gpg
-sudo sh -c 'echo "deb [arch=amd64 signed-by=/etc/apt/keyrings/warpdotdev.gpg] https://releases.warp.dev/linux/deb stable main" > /etc/apt/sources.list.d/warpdotdev.list'
-rm -f warpdotdev.gpg
 
-wget -c https://desktop.docker.com/linux/main/amd64/docker-desktop-amd64.deb
+# ✅ Google Chrome
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+# ✅ Warp Terminal
+wget "https://app.warp.dev/download?package=deb" -O warp-terminal.deb
+# ✅ VS Code
+wget "https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64" -O vscode.deb
+# ✅ Docker Desktop
+wget https://desktop.docker.com/linux/main/amd64/docker-desktop-amd64.deb
 
+# Add Docker's official GPG key:
+sudo apt update
+sudo apt install ca-certificates curl
 sudo install -m 0755 -d /etc/apt/keyrings
 sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
 sudo chmod a+r /etc/apt/keyrings/docker.asc
-echo \
-  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu \
-  $(. /etc/os-release && echo "${UBUNTU_CODENAME:-$VERSION_CODENAME}") stable" | \
-  sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+sudo tee /etc/apt/sources.list.d/docker.sources <<EOF
+Types: deb
+URIs: https://download.docker.com/linux/ubuntu
+Suites: $(. /etc/os-release && echo "${UBUNTU_CODENAME:-$VERSION_CODENAME}")
+Components: stable
+Signed-By: /etc/apt/keyrings/docker.asc
+EOF
+
+sudo apt update
 
 sudo apt update
 sudo apt install curl gettext ubuntu-restricted-extras libavcodec-extra build-essential git  ./*.deb
-!!!!!!!!!!!!sudo apt install curl gettext ubuntu-restricted-extras libavcodec-extra build-essential git transmission warp-terminal docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin  ./*.deb
-
-sudo systemctl enable containerd.service
-sudo systemctl enable docker.service
-
 rm -f ./*.deb
 sudo apt autoremove
 
