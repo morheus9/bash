@@ -29,7 +29,7 @@ Signed-By: /etc/apt/keyrings/docker.asc
 EOF
 
 sudo apt update
-sudo apt install curl gettext ubuntu-restricted-extras libavcodec-extra build-essential git  ./*.deb
+sudo apt install curl gettext ubuntu-restricted-extras libavcodec-extra build-essential git pre-commit ./*.deb
 rm -f ./*.deb
 sudo apt autoremove
 
