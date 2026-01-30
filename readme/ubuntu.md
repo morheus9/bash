@@ -114,6 +114,57 @@ sudo apt install flatpak
 sudo flatpak remote-add --if-not-exists --user flathub https://flathub.org/repo/flathub.flatpakrepo
 flatpak install --user flathub io.podman_desktop.PodmanDesktop
 ```
+```
+{
+  "mcpServers": {
+    "sequential-thinking": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-sequential-thinking"
+      ]
+    },
+    "Context7": {
+      "url": "https://mcp.context7.com/mcp",
+      "headers": {}
+    },
+    "AWS Documentation": {
+      "command": "uvx awslabs.aws-documentation-mcp-server@latest",
+      "env": {
+        "FASTMCP_LOG_LEVEL": "ERROR",
+        "AWS_DOCUMENTATION_PARTITION": "aws"
+      },
+      "args": []
+    },
+    "kubernetes-mcp-server": {
+      "command": "npx -y kubernetes-mcp-server@latest",
+      "env": {},
+      "args": []
+    },
+    "chrome-devtools": {
+      "command": "npx -y chrome-devtools-mcp@latest"
+    },
+    "postgresql-mcp": {
+      "command": "npx",
+      "args": [
+        "@henkey/postgres-mcp-server",
+        "--connection-string",
+        "postgresql://user:password@host:port/database"
+      ]
+    },
+    "Ref": {
+      "type": "http",
+      "url": "https://api.ref.tools/mcp?apiKey=ref-7eb2e29a3532c239ed69",
+      "headers": {}
+    },
+    "Playwright": {
+      "command": "npx @playwright/mcp@latest",
+      "env": {},
+      "args": []
+    }
+  }
+}
+```
 ##### [Vscode](https://code.visualstudio.com)
 ##### [Warp-terminal](https://www.warp.dev)
 ##### [Python](https://github.com/morheus9/bash/blob/main/scripts%20and%20patterns/python.md)
