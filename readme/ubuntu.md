@@ -37,6 +37,9 @@ sudo apt install plasma-session-x11
 rm -f ./*.deb
 sudo apt autoremove
 
+sudo snap install kubectl --classic
+sudo snap install helm --classic
+
 gpg --full-generate-key
 pass init
 ```
