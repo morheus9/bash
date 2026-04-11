@@ -33,11 +33,11 @@ uv python find
 uv python pin
 uv python uninstall
 
-uv tool install ruff
+uv tool install ruff ty
 uv tool uninstall ruff
 uv tool run ruff
 uv tool list
-uv tool update-shell
+uv tool upgrade ruff ty
 
 uv init
 uv venv
