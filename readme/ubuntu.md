@@ -32,7 +32,7 @@ Signed-By: /etc/apt/keyrings/docker.asc
 EOF
 
 sudo apt update
-sudo apt install kubuntu-restricted-extras build-essential git pre-commit
+sudo apt install kubuntu-restricted-extras build-essential git pre-commit snapd
 sudo apt install ./*.deb
 rm -f ./*.deb
 sudo apt autoremove
