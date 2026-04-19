@@ -7,6 +7,7 @@
 
 # ✅ Google Chrome
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+google-chrome --disable-gpu
 # ✅ Warp Terminal
 wget "https://app.warp.dev/download?package=deb" -O warp-terminal.deb
 # ✅ VS Code
@@ -33,7 +34,6 @@ EOF
 sudo apt update
 sudo apt install kubuntu-restricted-extras build-essential git pre-commit
 sudo apt install ./*.deb
-sudo apt install plasma-session-x11
 rm -f ./*.deb
 sudo apt autoremove
 
