@@ -32,7 +32,7 @@ Signed-By: /etc/apt/keyrings/docker.asc
 EOF
 
 sudo apt update
-sudo apt install ubuntu-restricted-extras build-essential git pre-commit snapd
+sudo apt install ubuntu-restricted-extras build-essential git pre-commit snapd gettext
 sudo apt install ./*.deb
 rm -f ./*.deb
 sudo apt autoremove
@@ -77,6 +77,9 @@ kubectl get pods --all-namespaces
 ##### uv
 ```bash
 curl -LsSf https://astral.sh/uv/install.sh | sh
+uv tool install ruff ty
+uv self update
+uv tool upgrade ruff ty
 ```
 ##### go, zsh, python+pip
 ```bash
