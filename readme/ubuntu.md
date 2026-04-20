@@ -77,7 +77,8 @@ kubectl get pods --all-namespaces
 ##### uv
 ```bash
 curl -LsSf https://astral.sh/uv/install.sh | sh
-uv tool install ruff ty
+uv tool install ruff
+uv tool install ty
 uv self update
 uv tool upgrade ruff ty
 ```
