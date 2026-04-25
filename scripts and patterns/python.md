@@ -42,8 +42,10 @@ uv tool upgrade ruff ty
 uv init
 uv venv
 source .venv/bin/activate
-uv sync
 uv add package
+uv tree --outdated
+uv lock --upgrade
+uv sync
 
 uv lock
 uv tree
