@@ -27,17 +27,18 @@ nuitka3 --onefile main.py
 curl -LsSf https://astral.sh/uv/install.sh | sh
 uv self update
 
+uv python upgrade
 uv python install 3.12 3.13
 uv python list
 uv python find
 uv python pin
 uv python uninstall
 
-uv tool install ruff ty
+uv tool install ruff ty pyrefly
 uv tool uninstall ruff
 uv tool run ruff
 uv tool list
-uv tool upgrade ruff ty
+uv tool upgrade pyrefly ruff
 
 uv init
 uv venv
