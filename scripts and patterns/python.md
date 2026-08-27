@@ -38,7 +38,7 @@ uv tool install ruff ty pyrefly
 uv tool uninstall ruff
 uv tool run ruff
 uv tool list
-uv tool upgrade pyrefly ruff
+uv tool upgrade --all
 
 uv init
 uv venv
