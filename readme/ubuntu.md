@@ -66,8 +66,9 @@ curl -LsSf https://astral.sh/uv/install.sh | sh
 uv tool install ruff
 uv tool install ty
 uv tool install pre-commit
+uv tool install pyrefly
 uv self update
-uv tool upgrade ruff ty pre-commit
+uv tool upgrade ruff ty pre-commit pyrefly
 ```
 ##### k3s
 ```bash
