@@ -60,6 +60,15 @@ source ~/.bashrc
 upg
 ```
 --------------------------------------------------------------------
+##### uv
+```bash
+curl -LsSf https://astral.sh/uv/install.sh | sh
+uv tool install ruff
+uv tool install ty
+uv tool install pre-commit
+uv self update
+uv tool upgrade ruff ty pre-commit
+```
 ##### k3s
 ```bash
 sudo curl -sfL https://get.k3s.io | sh -
@@ -73,15 +82,6 @@ export KUBECONFIG=~/.kube/config
 source ~/.bashrc
 
 kubectl get pods --all-namespaces
-```
-##### uv
-```bash
-curl -LsSf https://astral.sh/uv/install.sh | sh
-uv tool install ruff
-uv tool install ty
-uv tool install pre-commit
-uv self update
-uv tool upgrade ruff ty pre-commit
 ```
 ##### go, zsh, python+pip
 ```bash
