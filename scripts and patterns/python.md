@@ -27,8 +27,8 @@ nuitka3 --onefile main.py
 curl -LsSf https://astral.sh/uv/install.sh | sh
 uv self update
 
+uv python install
 uv python upgrade
-uv python install 3.12 3.13
 uv python list
 uv python find
 uv python pin
