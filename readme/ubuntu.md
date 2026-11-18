@@ -3,7 +3,7 @@
 - [Warp-terminal](https://www.warp.dev)
 - [Vscode](https://code.visualstudio.com)
 - [Docker-desktop](https://docs.docker.com/desktop/setup/install/linux/ubuntu)
-
+ 
 ```bash
 # ✅ Google Chrome
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
