@@ -3,8 +3,8 @@
 - [Warp-terminal](https://www.warp.dev)
 - [Vscode](https://code.visualstudio.com)
 - [Docker-desktop](https://docs.docker.com/desktop/setup/install/linux/ubuntu)
-```bash
 
+```bash
 # ✅ Google Chrome
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 google-chrome --disable-gpu
@@ -61,7 +61,7 @@ source ~/.bashrc
 ```
 uvg
 ```bash
-sudo echo 'alias uvg="uv self update && uv tool upgrade ruff ty pre-commit pyrefly && uv python upgrade"' >> ~/.bashrc
+sudo echo 'alias uvg="uv self update && uv tool upgrade ruff pre-commit pyrefly && uv python upgrade"' >> ~/.bashrc
 source ~/.bashrc
 ```
 --------------------------------------------------------------------
@@ -69,11 +69,10 @@ source ~/.bashrc
 ```bash
 curl -LsSf https://astral.sh/uv/install.sh | sh
 uv tool install ruff
-uv tool install ty
 uv tool install pre-commit
 uv tool install pyrefly
 uv self update
-uv tool upgrade ruff ty pre-commit pyrefly
+uv tool upgrade ruff pre-commit pyrefly
 ```
 ##### k3s
 ```bash
@@ -110,7 +109,7 @@ python3 -m pip install --upgrade --user ansible molecule
 
 ansible --version
 molecule --version
-python3.13 -V
+python3.14 -V
 ```
 --------------------------------------------------------------------
 ##### SSH
