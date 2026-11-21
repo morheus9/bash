@@ -56,12 +56,12 @@ gnome-extensions enable hidetopbar@mathieu.bidon.ca
 ##### Upgrade alias
 upg
 ```bash
-sudo echo 'alias upg="sudo snap refresh && sudo apt update && sudo apt upgrade -y"' >> ~/.bashrc
+sudo echo 'alias upg="sudo -v && sudo snap refresh && sudo apt update && sudo apt upgrade -y"' >> ~/.bashrc
 source ~/.bashrc
 ```
 uvg
 ```bash
-sudo echo 'alias uvg="uv self update && uv tool upgrade ruff pre-commit pyrefly && uv python upgrade"' >> ~/.bashrc
+sudo echo 'alias uvg="sudo -v && uv self update && uv tool upgrade ruff pre-commit pyrefly && uv python upgrade"' >> ~/.bashrc
 source ~/.bashrc
 ```
 --------------------------------------------------------------------
